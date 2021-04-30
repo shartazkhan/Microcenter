@@ -146,6 +146,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonEmployee.Size = new System.Drawing.Size(244, 45);
             this.buttonEmployee.TabIndex = 3;
             this.buttonEmployee.Text = "Manage Employee";
+            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
             // 
             // buttonLogout
             // 
@@ -196,6 +197,7 @@ namespace Microcenter.Presentation_Layer
             this.Name = "AdminDashboard";
             this.Text = "Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);

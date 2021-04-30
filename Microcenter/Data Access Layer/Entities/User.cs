@@ -11,6 +11,7 @@ namespace Microcenter.Data_Access_Layer.Entities
         public int EmployeeID { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public int  Type { get; set; }
+        public string Type { get; set; }
+        public string Position { get; set; }
     }
 }

@@ -240,10 +240,9 @@ namespace Microcenter.Presentation_Layer
 
             CategoryService categoryService = new CategoryService();
             comboBoxProductCategory.DataSource = categoryService.GetCategoryNames();
+           
             int catIndex = Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value);
-           
-           
-           comboBoxProductCategory.SelectedIndex =
+            comboBoxProductCategory.SelectedIndex =
                comboBoxProductCategory.FindStringExact(categoryService.GetCategoryName(catIndex).ToString());
 
         }

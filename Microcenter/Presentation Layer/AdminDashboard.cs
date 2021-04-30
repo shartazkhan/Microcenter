@@ -55,5 +55,17 @@ namespace Microcenter.Presentation_Layer
             this.Hide();
             inventory.Show();
         }
+
+        private void buttonEmployee_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            label0 employee = new label0(this);
+            employee.Show();
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
