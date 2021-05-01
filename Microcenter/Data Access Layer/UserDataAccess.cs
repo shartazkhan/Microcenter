@@ -59,9 +59,9 @@ namespace Microcenter.Data_Access_Layer
                 string sql = "UPDATE Users SET Name='" + user.Name + "',Password='" + user.Password + "',Type='" + user.Type + "',Position='" + user.Position + "' WHERE Username='" + user.Name + "'";
                 return this.ExecuteQuery(sql);
             }
-            public int DeleteUser(string employeeID)
+            public int DeleteUser(int employeeID)
             {
-                string sql = "DELETE FROM Users WHERE EmployeeID='" + employeeID + "'";
+                string sql = "DELETE FROM Users WHERE EmployeeID=" + employeeID + "";
                 return this.ExecuteQuery(sql);
             }
 

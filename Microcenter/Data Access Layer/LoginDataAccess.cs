@@ -10,15 +10,15 @@ namespace Microcenter.Data_Access_Layer
 {
     class LoginDataAccess : DataAccess
     {
-        public int UserLoginValidation(User user)
+        public string UserLoginValidation(User user)
         {
             string sql = "SELECT * FROM Users WHERE EmployeeID='" + user.EmployeeID + "' AND Password='" + user.Password + "'";
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
-                return 1; ;
+                return user.Position = user.Position = reader["Position"].ToString();
             }
-            return -1;
+            return null;
         }
     }
 }

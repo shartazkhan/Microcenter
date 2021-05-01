@@ -46,7 +46,7 @@ namespace Microcenter.Business_Logic_Layer
             User user = new User() { Name = name, Password = password, Type = type, Position = position };
             return this.userDataAccess.UpdateUser(user);
         }
-        public int DeleteUser(string employeeId)
+        public int DeleteUser(int employeeId)
         {
             return this.userDataAccess.DeleteUser(employeeId);
         }

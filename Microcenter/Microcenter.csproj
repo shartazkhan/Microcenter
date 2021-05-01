@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI">
       <HintPath>F:\Softwares\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
@@ -44,6 +49,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +66,7 @@
     <Compile Include="Business Logic Layer\EmployeeService.cs" />
     <Compile Include="Business Logic Layer\LoginService.cs" />
     <Compile Include="Business Logic Layer\ProductService.cs" />
+    <Compile Include="Business Logic Layer\SaleService.cs" />
     <Compile Include="Business Logic Layer\UserService.cs" />
     <Compile Include="Data Access Layer\CategoryDataAccess.cs" />
     <Compile Include="Data Access Layer\DataAccess.cs" />
@@ -67,9 +75,11 @@
     <Compile Include="Data Access Layer\Entities\Counter.cs" />
     <Compile Include="Data Access Layer\Entities\Employee.cs" />
     <Compile Include="Data Access Layer\Entities\Product.cs" />
+    <Compile Include="Data Access Layer\Entities\Sale.cs" />
     <Compile Include="Data Access Layer\Entities\User.cs" />
     <Compile Include="Data Access Layer\LoginDataAccess.cs" />
     <Compile Include="Data Access Layer\ProductDataAccess.cs" />
+    <Compile Include="Data Access Layer\SalesDataAccess.cs" />
     <Compile Include="Data Access Layer\UserDataAccess.cs" />
     <Compile Include="Presentation Layer\AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -77,11 +87,11 @@
     <Compile Include="Presentation Layer\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\Employee.cs">
+    <Compile Include="Presentation Layer\EmployeeManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <Compile Include="Presentation Layer\EmployeeManagement.Designer.cs">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Inventory.cs">
       <SubType>Form</SubType>
@@ -101,19 +111,49 @@
     <Compile Include="Presentation Layer\ManagerDashboard.Designer.cs">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\NewUser.cs">
+    <Compile Include="Presentation Layer\SalesHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\NewUser.Designer.cs">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <Compile Include="Presentation Layer\SalesHistory.Designer.cs">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingLayer\reportViewerSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingLayer\reportViewerSales.Designer.cs">
+      <DependentUpon>reportViewerSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingLayer\rptNUT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNUT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintingLayer\NewUserToken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingLayer\NewUserToken.Designer.cs">
+      <DependentUpon>NewUserToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingLayer\reportViewerNUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingLayer\reportViewerNUT.Designer.cs">
+      <DependentUpon>reportViewerNUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingLayer\rptSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\EmployeeManagement.resx">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
@@ -124,8 +164,25 @@
     <EmbeddedResource Include="Presentation Layer\ManagerDashboard.resx">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\NewUser.resx">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\SalesHistory.resx">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\reportViewerSales.resx">
+      <DependentUpon>reportViewerSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\rptNUT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNUT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\NewUserToken.resx">
+      <DependentUpon>NewUserToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\reportViewerNUT.resx">
+      <DependentUpon>reportViewerNUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\rptSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSales.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,10 +211,11 @@
     <None Include="Image\Inventory_white.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Inventory.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Image\Inventory_Black.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

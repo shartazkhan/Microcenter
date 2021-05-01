@@ -26,21 +26,58 @@ namespace Microcenter.Presentation_Layer
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            LoginService loginService = new LoginService();
-            int result = loginService.LoginValidation(Convert.ToInt32(textBoxEmployeeId.Text), textBoxPassword.Text);
-            if (result == -1)
+            if (string.IsNullOrEmpty(textBoxEmployeeId.Text))
             {
-                MessageBox.Show("Invalid ID or password");
+                MessageBox.Show("Please Enter an Employee ID.");
+            }
+            else if (string.IsNullOrEmpty(textBoxPassword.Text))
+            {
+                MessageBox.Show("Please Enter a Password.");
+            }
+            else if (radioButtonAdmin.Checked == false && radioButtonCashier.Checked == false && radioButtonManager.Checked == false)
+            {
+                MessageBox.Show("Please Select Your Position.");
             }
             else
             {
-                AdminDashboard adminDashboard = new AdminDashboard(this);
+                LoginService loginService = new LoginService();
+                string result = loginService.LoginValidation(Convert.ToInt32(textBoxEmployeeId.Text), textBoxPassword.Text);
+                if (result == null)
+                {
+                    MessageBox.Show("Invalid ID or password");
+                }
+                else
+                {
+                    
+                    
 
-
-                textBoxPassword.Text = String.Empty;
-                this.Hide();
-                adminDashboard.Show();
+                    if (radioButtonAdmin.Checked == true && result == radioButtonAdmin.Text)
+                    {
+                        AdminDashboard adminDashboard = new AdminDashboard(this);
+                        adminDashboard.Show();
+                        textBoxPassword.Text = String.Empty;
+                        this.Hide();
+                    }
+                    else if (radioButtonCashier.Checked == true && result == radioButtonCashier.Text)
+                    {
+                        textBoxPassword.Text = String.Empty;
+                        this.Hide();
+                    }
+                    else if (radioButtonManager.Checked == true && result == radioButtonManager.Text)
+                    {
+                        ManagerDashboard managerDashboard = new ManagerDashboard();
+                        managerDashboard.Show();
+                        textBoxPassword.Text = String.Empty;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid ID Position Combination");
+                    }
+                    
+                }
             }
+            
 
         }
 

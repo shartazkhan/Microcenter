@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microcenter.Presentation_Layer;
+using Microcenter.PrintingLayer;
 
 namespace Microcenter
 {

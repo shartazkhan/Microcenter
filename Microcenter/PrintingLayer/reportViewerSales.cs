@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Microcenter.Presentation_Layer
+namespace Microcenter.PrintingLayer
 {
-    public partial class NewUser : Form
+    public partial class reportViewerSales : Form
     {
-        public NewUser()
+        public reportViewerSales()
         {
             InitializeComponent();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microcenter.Data_Access_Layer.Entities
 {
-    class Employee
+    public class Employee
     {
         public int EmployeeID { get; set; }
         public string Name { get; set; }

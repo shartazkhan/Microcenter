@@ -33,14 +33,16 @@ namespace Microcenter.Presentation_Layer
             }
             else
             {
-                this.BackColor = Color.Azure;
+                this.BackColor = Color.White;
 
             }
         }
 
         private void Sales_Click(object sender, EventArgs e)
         {
-
+            SalesHistory salesHistory = new SalesHistory();
+            this.Hide();
+            salesHistory.Show();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -59,8 +61,8 @@ namespace Microcenter.Presentation_Layer
         private void buttonEmployee_Click(object sender, EventArgs e)
         {
             this.Hide();
-            label0 employee = new label0(this);
-            employee.Show();
+            EmployeeManagement employeeManagement = new EmployeeManagement(this);
+            employeeManagement.Show();
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)

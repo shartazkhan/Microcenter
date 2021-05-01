@@ -16,7 +16,7 @@ namespace Microcenter.Business_Logic_Layer
         {
             this.loginDataAccess = new LoginDataAccess();
         }
-        public int LoginValidation(int employeeID, string password)
+        public string LoginValidation(int employeeID, string password)
         {
             User user = new User()
             {
