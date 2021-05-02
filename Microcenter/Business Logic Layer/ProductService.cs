@@ -26,7 +26,7 @@ namespace Microcenter.Business_Logic_Layer
             return this.productDataAccess.GetProductsByID(id);
         }
 
-        public int AddNewProduct(string productName, int stock, double retailPrice, double listingPrice, int unit, string categoryName)
+        public int AddNewProduct(string productName, int stock, double retailPrice, double listingPrice, int unit, string categoryName, int count)
         {
             CategoryDataAccess categoryDataAccess = new CategoryDataAccess();
             int categoryId = categoryDataAccess.GetCategoryId(categoryName);
@@ -38,7 +38,8 @@ namespace Microcenter.Business_Logic_Layer
                 RetailPrice= retailPrice,
                 ListingPrice = listingPrice,
                 Unit = unit,
-                CategoryID = categoryId
+                CategoryID = categoryId,
+                SaleCount = count
      
             };
             this.productDataAccess = new ProductDataAccess();
@@ -72,5 +73,35 @@ namespace Microcenter.Business_Logic_Layer
             this.productDataAccess = new ProductDataAccess();
             return this.productDataAccess.GetProductsByCategoryId(categoryId);
         }
+
+        public List<string> GetProductNames()
+        {
+            return this.productDataAccess.GetProductNames();
+        }
+        public List<string> GetProductNamesbyCategoryName(string categoryName)
+        {
+            return this.productDataAccess.GetProductNamesbyCategoryName(categoryName);
+        }
+
+        public int GetProductID(string producName)
+        {
+            return this.productDataAccess.GetProductID(producName);
+        }
+       
+
+        public decimal GetProductPrice(int producID)
+        {
+            return this.productDataAccess.GetProductPrice(producID);
+        }
+
+        public int GetProductCount(string producName)
+        {
+            return this.productDataAccess.GetProductCount(producName);
+        }
+        public int UpdateProductCount(string productName, int count)
+        {
+            return this.productDataAccess.UpdateProductCount(productName,count);
+        }
+
     }
 }

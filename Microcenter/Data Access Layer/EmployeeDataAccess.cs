@@ -69,6 +69,15 @@ namespace Microcenter.Data_Access_Layer
             return this.ExecuteQuery(sql);
         }
 
-        
+        public int GetEmployeeID(string name,string pos)
+        {
+            string sql = "SELECT EmployeeID FROM Employees WHERE Name='" + name + "' AND Position='"+pos+"'";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["EmployeeID"]); ;
+            }
+            return -1;
+        }
     }
 }

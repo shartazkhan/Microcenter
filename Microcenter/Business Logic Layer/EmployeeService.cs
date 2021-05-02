@@ -43,7 +43,6 @@ namespace Microcenter.Business_Logic_Layer
         public int RemoveEmployee(int employeeID)
         {
             return this.employeeDataAccess.DeleteEmployee(employeeID);
-
         }
 
         public int AddNewEmployee(string name, string contact, string gender, string doB, String employeeType, string hireDate, string Position, string picture)
@@ -55,6 +54,12 @@ namespace Microcenter.Business_Logic_Layer
             Employee employee = new Employee() {Name = name, Contact = contact, Gender = gender, DoB = doB, EmployeeType = employeeType, HireDate = hireDate, Position = Position, Picture = picture };
 
             return this.employeeDataAccess.AddEmployee(employee);
+        }
+
+        public int GetEmployeeID(string name, string pos)
+        {
+            this.employeeDataAccess = new EmployeeDataAccess();
+            return employeeDataAccess.GetEmployeeID(name,pos);
         }
 
     }

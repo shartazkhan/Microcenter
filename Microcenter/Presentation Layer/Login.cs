@@ -54,21 +54,25 @@ namespace Microcenter.Presentation_Layer
                     if (radioButtonAdmin.Checked == true && result == radioButtonAdmin.Text)
                     {
                         AdminDashboard adminDashboard = new AdminDashboard(this);
+                        this.Hide();
                         adminDashboard.Show();
                         textBoxPassword.Text = String.Empty;
-                        this.Hide();
+                        
                     }
                     else if (radioButtonCashier.Checked == true && result == radioButtonCashier.Text)
                     {
+                        CashierDashboard cashierDashboard = new CashierDashboard();
                         textBoxPassword.Text = String.Empty;
                         this.Hide();
+                        cashierDashboard.Show();
                     }
                     else if (radioButtonManager.Checked == true && result == radioButtonManager.Text)
                     {
                         ManagerDashboard managerDashboard = new ManagerDashboard();
+                        this.Hide();
                         managerDashboard.Show();
                         textBoxPassword.Text = String.Empty;
-                        this.Hide();
+                        
                     }
                     else
                     {

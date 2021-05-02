@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Microcenter.Data_Access_Layer.Entities
 {
-    class Category
+    class Salesman
     {
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
-        public int SaleCount { get; set; }
+        public int SalesmanSL { get; set; }
+        public decimal UnitCount { get; set; }
+        public decimal MoneyCount { get; set; }
     }
 }

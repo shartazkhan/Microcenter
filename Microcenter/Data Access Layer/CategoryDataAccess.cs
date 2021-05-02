@@ -20,6 +20,7 @@ namespace Microcenter.Data_Access_Layer
                 Category category = new Category();
                 category.CategoryID = Convert.ToInt32(reader["CategoryID"]);
                 category.CategoryName = reader["CategoryName"].ToString();
+                category.SaleCount = Convert.ToInt32(reader["SaleCount"]);
                 categories.Add(category);
             }
             return categories;
@@ -33,6 +34,7 @@ namespace Microcenter.Data_Access_Layer
                 Category category = new Category();
                 category.CategoryID = Convert.ToInt32(reader["CategoryID"]);
                 category.CategoryName = reader["CategoryName"].ToString();
+                category.SaleCount = Convert.ToInt32(reader["SaleCount"]);
                 return category;
             }
             return null;
@@ -40,10 +42,9 @@ namespace Microcenter.Data_Access_Layer
 
         public int AddCategory(Category category)
         {
-            string sql = "INSERT INTO Categories(CategoryName) VALUES('" + category.CategoryName + "')";
+            string sql = "INSERT INTO Categories(CategoryName,SaleCount) VALUES('" + category.CategoryName + "',"+ category.SaleCount+")";
             return this.ExecuteQuery(sql);
         }
-
         public int UpdateCategory(Category category)
         {
             string sql = "UPDATE Categories SET CategoryName='" + category.CategoryName + "' WHERE CategoryID=" + category.CategoryID;
@@ -86,6 +87,23 @@ namespace Microcenter.Data_Access_Layer
                 categoryNames.Add(reader["CategoryName"].ToString());
             }
             return categoryNames;
+        }
+
+        public int GetCategoryCount(string categoryName)
+        {
+            string sql = "SELECT SaleCount FROM Categories WHERE CategoryName='" + categoryName + "'";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["SaleCount"]);
+            }
+            return -1;
+        }
+
+        public int UpdateCategoryCount(string categoryName, int count)
+        {
+            string sql = "UPDATE Categories SET SaleCount=" + count + " WHERE CategoryName = '" + categoryName + "'";
+            return this.ExecuteQuery(sql);
         }
     }
 }

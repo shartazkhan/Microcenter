@@ -212,6 +212,7 @@ namespace Microcenter.Presentation_Layer
             this.Controls.Add(this.controlBoxClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

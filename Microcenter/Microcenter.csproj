@@ -67,6 +67,7 @@
     <Compile Include="Business Logic Layer\LoginService.cs" />
     <Compile Include="Business Logic Layer\ProductService.cs" />
     <Compile Include="Business Logic Layer\SaleService.cs" />
+    <Compile Include="Business Logic Layer\SalesmanService.cs" />
     <Compile Include="Business Logic Layer\UserService.cs" />
     <Compile Include="Data Access Layer\CategoryDataAccess.cs" />
     <Compile Include="Data Access Layer\DataAccess.cs" />
@@ -76,16 +77,24 @@
     <Compile Include="Data Access Layer\Entities\Employee.cs" />
     <Compile Include="Data Access Layer\Entities\Product.cs" />
     <Compile Include="Data Access Layer\Entities\Sale.cs" />
+    <Compile Include="Data Access Layer\Entities\Salesman.cs" />
     <Compile Include="Data Access Layer\Entities\User.cs" />
     <Compile Include="Data Access Layer\LoginDataAccess.cs" />
     <Compile Include="Data Access Layer\ProductDataAccess.cs" />
     <Compile Include="Data Access Layer\SalesDataAccess.cs" />
+    <Compile Include="Data Access Layer\SalesmanDataAccess.cs" />
     <Compile Include="Data Access Layer\UserDataAccess.cs" />
     <Compile Include="Presentation Layer\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CashierDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CashierDashboard.Designer.cs">
+      <DependentUpon>CashierDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\EmployeeManagement.cs">
       <SubType>Form</SubType>
@@ -151,6 +160,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CashierDashboard.resx">
+      <DependentUpon>CashierDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\EmployeeManagement.resx">
       <DependentUpon>EmployeeManagement.cs</DependentUpon>

@@ -15,6 +15,7 @@ namespace Microcenter.Data_Access_Layer.Entities
         public double ListingPrice { get; set; }
         public int Unit { get; set; }
         public int CategoryID { get; set; }
+        public int SaleCount { get; set; }
 
     }
 }

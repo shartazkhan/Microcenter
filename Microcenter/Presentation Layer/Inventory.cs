@@ -151,7 +151,7 @@ namespace Microcenter.Presentation_Layer
             else
             {
                 CategoryService categoryService = new CategoryService();
-                int result = categoryService.AddNewCategory(textBoxAddCategory.Text);
+                int result = categoryService.AddNewCategory(textBoxAddCategory.Text,0);
                 if (result > 0)
                 {
                     MessageBox.Show("New category added successfully !!");
@@ -221,29 +221,36 @@ namespace Microcenter.Presentation_Layer
             buttonDeleteProduct.Enabled = true;
             buttonAddProduct.Enabled = false;
 
-            textBoxProductID.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBoxProductName.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
-            // textboxP.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBoxProductRetail.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textBoxProductListing.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-            textBoxProductUnit.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-            //textBoxProduct.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            if (Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[2].Value) == 1)
+            try
             {
-                radioButtonYes.Checked = true;
-            }
-            else
-            {
-                radioButtonNo.Checked = true;
-            }
+                textBoxProductID.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBoxProductName.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+                // textboxP.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBoxProductRetail.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBoxProductListing.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBoxProductUnit.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                //textBoxProduct.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-            CategoryService categoryService = new CategoryService();
-            comboBoxProductCategory.DataSource = categoryService.GetCategoryNames();
+                if (Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[2].Value) == 1)
+                {
+                    radioButtonYes.Checked = true;
+                }
+                else
+                {
+                    radioButtonNo.Checked = true;
+                }
+
+                CategoryService categoryService = new CategoryService();
+                comboBoxProductCategory.DataSource = categoryService.GetCategoryNames();
            
-            int catIndex = Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value);
-            comboBoxProductCategory.SelectedIndex =
-               comboBoxProductCategory.FindStringExact(categoryService.GetCategoryName(catIndex).ToString());
+                int catIndex = Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value);
+                comboBoxProductCategory.SelectedIndex =
+                    comboBoxProductCategory.FindStringExact(categoryService.GetCategoryName(catIndex).ToString());
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error: Your trying to select a header. Please select and index.");
+            }
 
         }
 
@@ -305,7 +312,7 @@ namespace Microcenter.Presentation_Layer
                     }
                     
                     ProductService productService = new ProductService();
-                    int result = productService.AddNewProduct(textBoxProductName.Text, stock, Convert.ToDouble(textBoxProductRetail.Text), Convert.ToDouble(textBoxProductListing.Text), Convert.ToInt32(textBoxProductUnit.Text), comboBoxProductCategory.Text);
+                    int result = productService.AddNewProduct(textBoxProductName.Text, stock, Convert.ToDouble(textBoxProductRetail.Text), Convert.ToDouble(textBoxProductListing.Text), Convert.ToInt32(textBoxProductUnit.Text), comboBoxProductCategory.Text,0);
                     if (result > 0)
                     {
                         MessageBox.Show("New product added successfully !!");

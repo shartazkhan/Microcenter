@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microcenter.Business_Logic_Layer;
+using Microcenter.Data_Access_Layer;
 using Microcenter.PrintingLayer;
 
 namespace Microcenter.Presentation_Layer
@@ -24,6 +25,7 @@ namespace Microcenter.Presentation_Layer
         public int id;
         public string pos;
         private string imageFileName;
+        private int result;
         public EmployeeManagement(AdminDashboard adminDashboard)
         {
             InitializeComponent();
@@ -95,75 +97,60 @@ namespace Microcenter.Presentation_Layer
             textBoxPassword.Enabled = true;
 
 
-            labelEmployeeID.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
-            id = Convert.ToInt32(labelEmployeeID.Text);
-
-            textBoxName.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxContact.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
-            dateTimePickerDoB.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
-            dateTimePickerHireDate.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            //textBoxPath.Text = tempFilePath + dataGridViewEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
-            imageFileName = dataGridViewEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-            string newImage = tempFilePath + dataGridViewEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-
-            circlePictureBox.Image = Image.FromFile(newImage);
-
-            if (dataGridViewEmployee.Rows[e.RowIndex].Cells[5].Value.ToString() == "Permanent")
+            try
             {
-                radioButtonParman.Checked = true;
-                Emptype = radioButtonParman.Text;
-            }
-            else
-            {
-                radioButtonTempo.Checked = true;
-                Emptype = radioButtonTempo.Text;
-            }
+                labelEmployeeID.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
+                id = Convert.ToInt32(labelEmployeeID.Text);
 
-            string genderIndex = dataGridViewEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string positionIndex = dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textBoxName.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxContact.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
+                dateTimePickerDoB.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
+                dateTimePickerHireDate.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-            if (dataGridViewEmployee.Rows[e.RowIndex].Cells[3].Value.ToString() == "Male")
-            {
-                comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Male");
+                //textBoxPath.Text = tempFilePath + dataGridViewEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
+                imageFileName = dataGridViewEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+                string newImage = tempFilePath + dataGridViewEmployee.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+
+                circlePictureBox.Image = Image.FromFile(newImage);
+
+                if (dataGridViewEmployee.Rows[e.RowIndex].Cells[5].Value.ToString() == "Permanent")
+                {
+                    radioButtonParman.Checked = true;
+                    Emptype = radioButtonParman.Text;
+                }
+                else
+                {
+                    radioButtonTempo.Checked = true;
+                    Emptype = radioButtonTempo.Text;
+                }
+
+                string genderIndex = dataGridViewEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string positionIndex = dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+                if (dataGridViewEmployee.Rows[e.RowIndex].Cells[3].Value.ToString() == "Male")
+                {
+                    comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Male");
                
-            }
-            else if (dataGridViewEmployee.Rows[e.RowIndex].Cells[3].Value.ToString() == "Female")
-            {
-                comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Female");
+                }
+                else if (dataGridViewEmployee.Rows[e.RowIndex].Cells[3].Value.ToString() == "Female")
+                {
+                    comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Female");
                
+                }
+                else
+                {
+                    comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Other");
+                }
+
+                comboBox2Position.SelectedIndex = comboBox2Position.FindStringExact(dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString());
+                pos = dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
             }
-            else
+            catch (Exception exception)
             {
-                comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Other");
+                MessageBox.Show("Error: Your trying to select a header. Please select and index.");
             }
-
-            /*comboBox2Position
-            if (dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString() == "Manager")
-            {
-                comboBox2Position.SelectedIndex = comboBox2Position.FindStringExact("Manager");
-
-            }
-            else if (dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString() == "Cashier")
-            {
-                comboBox2Position.SelectedIndex = comboBox2Position.FindStringExact("Cashier");
-
-            }
-            else if (dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString() == "Salesman")
-            {
-                comboBox2Position.SelectedIndex = comboBox2Position.FindStringExact("Salesman");
-
-            }
-
-            else
-            {
-                comboBoxGender.SelectedIndex = comboBoxGender.FindStringExact("Owner");
-            }*/
-
-            comboBox2Position.SelectedIndex = comboBox2Position.FindStringExact(dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString());
-            pos = dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -221,23 +208,40 @@ namespace Microcenter.Presentation_Layer
                 string ln = Path.Combine(pathOfFolder,
                     (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)));
 
-
+                // Add in employee
                 EmployeeService employeeService = new EmployeeService();
-                int result = employeeService.AddNewEmployee(textBoxName.Text,textBoxContact.Text,comboBoxGender.Text,dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text,comboBox2Position.Text, (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)));
+                this.result = employeeService.AddNewEmployee(textBoxName.Text,textBoxContact.Text,comboBoxGender.Text,dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text,comboBox2Position.Text, (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)));
                 if (result > 0)
                 {
                     MessageBox.Show("New Employee added successfully !!");
                   
 
                     File.Copy(textBoxPath.Text, ln, true);
-                    UpdateList();
+                   
                 }
                 else
                 {
                     MessageBox.Show("Error in adding.");
                 }
 
-                
+                // Add employee by position table
+                if (comboBox2Position.Text == "Salesman")
+                {
+                   // EmployeeService employeeService = new EmployeeService();
+                    SalesmanService salesmanService = new SalesmanService();
+                    int sl = employeeService.GetEmployeeID(textBoxName.Text, comboBox2Position.Text);
+                    int result2 = salesmanService.AddNewSalesman(sl,0,0);
+                    if (result2 > 0)
+                    {
+                        MessageBox.Show("New Employee added successfully !!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in adding.");
+                    }
+
+                }
+                UpdateList();
             }
 
           

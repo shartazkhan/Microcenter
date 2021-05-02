@@ -26,9 +26,9 @@ namespace Microcenter.Business_Logic_Layer
             return this.categoryDataAccess.GetCategory(id);
         }
 
-        public int AddNewCategory(string categoryName)
+        public int AddNewCategory(string categoryName, int count)
         {
-            Category category = new Category() { CategoryName = categoryName };
+            Category category = new Category() { CategoryName = categoryName, SaleCount = count };
             return this.categoryDataAccess.AddCategory(category);
         }
         public int UpdateExistingCategory(int categoryId, string categoryName)
@@ -45,7 +45,7 @@ namespace Microcenter.Business_Logic_Layer
         {
             return this.categoryDataAccess.GetCategoryNames();
         }
-        
+
         public int GetCategoryID(string categoryName)
         {
             int id = Convert.ToInt32(this.categoryDataAccess.GetCategoryId(categoryName));
@@ -57,5 +57,15 @@ namespace Microcenter.Business_Logic_Layer
             string categoryName = this.categoryDataAccess.GetCategoryNameById(id).ToString();
             return categoryName;
         }
+
+        public int GetCategoryCount(string categoryName)
+        {
+            return this.categoryDataAccess.GetCategoryCount(categoryName);
+        }
+        public int UpdateCategoryCount(string categoryName, int count)
+        {
+            return this.categoryDataAccess.UpdateCategoryCount(categoryName, count);
+        }
+
     }
 }
