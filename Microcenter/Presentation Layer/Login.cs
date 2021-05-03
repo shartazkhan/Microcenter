@@ -19,6 +19,18 @@ namespace Microcenter.Presentation_Layer
             InitializeComponent();
         }
 
+        private const int CS_DropShadow = 0x00020000;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle = CS_DropShadow;
+                return cp;
+            }
+
+        }
 
         ~Login()
         {
@@ -64,7 +76,7 @@ namespace Microcenter.Presentation_Layer
                     else if (radioButtonCashier.Checked == true && result == radioButtonCashier.Text)
                     {
                         this.pos = radioButtonCashier.Text;
-                        CashierDashboard cashierDashboard = new CashierDashboard();
+                        CashierDashboard cashierDashboard = new CashierDashboard(this);
                         textBoxPassword.Text = String.Empty;
                         this.Hide();
                         cashierDashboard.Show();

@@ -65,7 +65,7 @@ namespace Microcenter.Data_Access_Layer
         }
         public int DeleteEmployee(int employeeId)
         {
-            string sql = "DELETE FROM Employees WHERE EmployeeID='" + employeeId + "'";
+            string sql = "DELETE FROM Employees WHERE EmployeeID=" + employeeId;
             return this.ExecuteQuery(sql);
         }
 

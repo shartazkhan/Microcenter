@@ -61,13 +61,13 @@ namespace Microcenter.Data_Access_Layer
             }
             public int DeleteUser(int employeeID)
             {
-                string sql = "DELETE FROM Users WHERE EmployeeID=" + employeeID + "";
+                string sql = "DELETE FROM Users WHERE EmployeeID=" + employeeID;
                 return this.ExecuteQuery(sql);
             }
 
             public string GetUsername(int employeeID)
             {
-                string sql = "SELECT Name FROM Users WHERE EmployeeID='" + employeeID + "'";
+                string sql = "SELECT Name FROM Users WHERE EmployeeID=" + employeeID;
                 SqlDataReader reader = this.GetData(sql);
                 if (reader.Read())
                 {

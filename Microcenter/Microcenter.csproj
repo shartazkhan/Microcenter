@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Business Logic Layer\CategoryService.cs" />
     <Compile Include="Business Logic Layer\EmployeeService.cs" />
+    <Compile Include="Business Logic Layer\InvoiceService.cs" />
     <Compile Include="Business Logic Layer\LoginService.cs" />
     <Compile Include="Business Logic Layer\ProductService.cs" />
     <Compile Include="Business Logic Layer\SaleService.cs" />
@@ -75,10 +76,12 @@
     <Compile Include="Data Access Layer\Entities\Category.cs" />
     <Compile Include="Data Access Layer\Entities\Counter.cs" />
     <Compile Include="Data Access Layer\Entities\Employee.cs" />
+    <Compile Include="Data Access Layer\Entities\Invoice.cs" />
     <Compile Include="Data Access Layer\Entities\Product.cs" />
     <Compile Include="Data Access Layer\Entities\Sale.cs" />
     <Compile Include="Data Access Layer\Entities\Salesman.cs" />
     <Compile Include="Data Access Layer\Entities\User.cs" />
+    <Compile Include="Data Access Layer\InvoiceDataAccess.cs" />
     <Compile Include="Data Access Layer\LoginDataAccess.cs" />
     <Compile Include="Data Access Layer\ProductDataAccess.cs" />
     <Compile Include="Data Access Layer\SalesDataAccess.cs" />
@@ -126,11 +129,29 @@
     <Compile Include="Presentation Layer\SalesHistory.Designer.cs">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintingLayer\PrintToken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingLayer\PrintToken.Designer.cs">
+      <DependentUpon>PrintToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingLayer\reportViewerInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingLayer\reportViewerInvoice.Designer.cs">
+      <DependentUpon>reportViewerInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintingLayer\reportViewerSales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintingLayer\reportViewerSales.Designer.cs">
       <DependentUpon>reportViewerSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingLayer\rptInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PrintingLayer\rptNUT.cs">
       <AutoGen>True</AutoGen>
@@ -179,8 +200,18 @@
     <EmbeddedResource Include="Presentation Layer\SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\PrintToken.resx">
+      <DependentUpon>PrintToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\reportViewerInvoice.resx">
+      <DependentUpon>reportViewerInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintingLayer\reportViewerSales.resx">
       <DependentUpon>reportViewerSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\rptInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintingLayer\rptNUT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

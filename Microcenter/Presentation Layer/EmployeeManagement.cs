@@ -167,7 +167,7 @@ namespace Microcenter.Presentation_Layer
                 }
 
                 comboBox2Position.SelectedIndex = comboBox2Position.FindStringExact(dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString());
-                pos = dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
+                this.pos = dataGridViewEmployee.Rows[e.RowIndex].Cells[7].Value.ToString();
             }
             catch (Exception exception)
             {
@@ -291,32 +291,61 @@ namespace Microcenter.Presentation_Layer
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            
-            EmployeeService employeeService = new EmployeeService();
-            int result = employeeService.RemoveEmployee(id);
-            if (result > 0)
+
+            if (pos == "Cashier" || pos == "Manager")
             {
-                MessageBox.Show("Employee deleted successfully !!");
-                UpdateList();
+                UserService userService = new UserService();
+                int result2 = userService.DeleteUser(id);
+                if (result2 > 0)
+                {
+                
+                }
+                else
+                {
+                    MessageBox.Show("Error in deleting.");
+                }
+
+                EmployeeService employeeService = new EmployeeService();
+                int result = employeeService.RemoveEmployee(id);
+                if (result > 0)
+                {
+                    MessageBox.Show("Employee deleted successfully !!");
+                    UpdateList();
+                }
+                else
+                {
+                    MessageBox.Show("Error in deleting.");
+                }
+            }
+            else if (pos == "Salesman")
+            {
+                SalesmanService salesmanService = new SalesmanService();
+                int result2 = salesmanService.RemoveSalesman(id);
+                if (result > 0)
+                {
+                    EmployeeService employeeService = new EmployeeService();
+                    int result = employeeService.RemoveEmployee(id);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Employee deleted successfully !!");
+                        UpdateList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in deleting.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error in deleting.");
+                }
             }
             else
             {
-                MessageBox.Show("Error in deleting.");
+                MessageBox.Show("Can not delete admin!");
             }
 
-            UserService userService = new UserService();
-            int result2 = userService.DeleteUser(id);
-            if (result > 0)
-            {
-                //MessageBox.Show("Employee deleted successfully !!");
-                //UpdateList();
-            }
-            else
-            {
-                MessageBox.Show("Error in deleting.");
-            }
-
-            if (imageFileName != "Avatar.png")
+            if (imageFileName != "Avatar.png" && result > 0)
             {
                 circlePictureBox.Image = Image.FromFile(@"C:\Users\shart\source\repos\Microcenter\Microcenter\Image\Avatar.png");
                 System.GC.Collect();

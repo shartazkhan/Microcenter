@@ -27,6 +27,19 @@ namespace Microcenter.Data_Access_Layer
             return salesmans;
         }
 
+
+        public List<int> GetSalesmansID()
+        {
+            string sql = "SELECT SalesmanSL FROM Salesmans";
+            SqlDataReader reader = this.GetData(sql);
+            List<int> salesmanSL = new List<int>();
+            while (reader.Read())
+            {
+                salesmanSL.Add(Convert.ToInt32(reader["SalesmanSL"]));
+            }
+            return salesmanSL;
+        }
+
         public int AddSalesman(Salesman salesman)
         {
             string sql = "INSERT INTO Salesmans(SalesmanSL,UnitCount,MoneyCount) VALUES(" + salesman.SalesmanSL + "," + salesman.UnitCount + "," + salesman.MoneyCount + ")";
@@ -42,7 +55,7 @@ namespace Microcenter.Data_Access_Layer
         }
         public int DeleteSalesman(int employeeId)
         {
-            string sql = "DELETE FROM Salesmans WHERE SalesmanSL=" + employeeId + "";
+            string sql = "DELETE FROM Salesmans WHERE SalesmanSL=" + employeeId;
             return this.ExecuteQuery(sql);
         }
 

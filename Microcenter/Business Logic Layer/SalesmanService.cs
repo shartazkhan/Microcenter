@@ -21,6 +21,11 @@ namespace Microcenter.Business_Logic_Layer
             return this.salesmanDataAccess.GetSalesmans();
         }
 
+        public List<int> GetSalesmansId()
+        {
+            return this.salesmanDataAccess.GetSalesmansID();
+        }
+
         public int RemoveSalesman(int employeeID)
         {
             return this.salesmanDataAccess.DeleteSalesman(employeeID);
