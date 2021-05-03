@@ -13,6 +13,7 @@ namespace Microcenter.Presentation_Layer
 {
     public partial class Login : Form
     {
+        public string pos;
         public Login()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace Microcenter.Presentation_Layer
 
                     if (radioButtonAdmin.Checked == true && result == radioButtonAdmin.Text)
                     {
+                        this.pos = radioButtonAdmin.Text;
                         AdminDashboard adminDashboard = new AdminDashboard(this);
                         this.Hide();
                         adminDashboard.Show();
@@ -61,6 +63,7 @@ namespace Microcenter.Presentation_Layer
                     }
                     else if (radioButtonCashier.Checked == true && result == radioButtonCashier.Text)
                     {
+                        this.pos = radioButtonCashier.Text;
                         CashierDashboard cashierDashboard = new CashierDashboard();
                         textBoxPassword.Text = String.Empty;
                         this.Hide();
@@ -68,7 +71,8 @@ namespace Microcenter.Presentation_Layer
                     }
                     else if (radioButtonManager.Checked == true && result == radioButtonManager.Text)
                     {
-                        ManagerDashboard managerDashboard = new ManagerDashboard();
+                        this.pos = radioButtonManager.Text;
+                        ManagerDashboard managerDashboard = new ManagerDashboard(this);
                         this.Hide();
                         managerDashboard.Show();
                         textBoxPassword.Text = String.Empty;

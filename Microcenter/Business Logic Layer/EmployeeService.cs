@@ -62,5 +62,16 @@ namespace Microcenter.Business_Logic_Layer
             return employeeDataAccess.GetEmployeeID(name,pos);
         }
 
+        public string GetEmployeeNameByID(int id)
+        {
+            return employeeDataAccess.GetEmployeeNameByID(id);
+        }
+        public string GetEmployeePictureByID(int id)
+        {
+            return employeeDataAccess.GetEmployeePictureByID(id);
+        }
+
+        
+
     }
 }

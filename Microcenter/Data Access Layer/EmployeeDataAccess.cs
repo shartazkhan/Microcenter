@@ -79,5 +79,28 @@ namespace Microcenter.Data_Access_Layer
             }
             return -1;
         }
+
+        public string GetEmployeeNameByID(int id)
+        {
+            string sql = "SELECT Name FROM Employees WHERE EmployeeID=" + id ;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return reader["Name"].ToString(); ;
+            }
+            return null;
+        }
+
+        public string GetEmployeePictureByID(int id)
+        {
+            string sql = "SELECT Picture FROM Employees WHERE EmployeeID=" + id;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return reader["Picture"].ToString(); ;
+            }
+            return null;
+        }
+
     }
 }

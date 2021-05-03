@@ -75,5 +75,49 @@ namespace Microcenter.Data_Access_Layer
             return -1;
         }
 
+        public int GetMaxUnit()
+        {
+            string sql = "SELECT MAX(UnitCount) as UnitCount FROM Salesmans";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["UnitCount"]);
+            }
+            return -1;
+        }
+
+        public int GetMaxMoney()
+        {
+            string sql = "SELECT MAX(MoneyCount) as MoneyCount FROM Salesmans";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["MoneyCount"]);
+            }
+            return -1;
+        }
+
+        public int GetBestSalesmanCat1(decimal money)
+        {
+            string sql = "SELECT SalesmanSL FROM Salesmans WHERE MoneyCount=" + money;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["SalesmanSL"]); ;
+            }
+            return -1;
+        }
+
+        public int GetBestSalesmanCat2(int unit)
+        {
+            string sql = "SELECT SalesmanSL FROM Salesmans WHERE UnitCount=" + unit;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["SalesmanSL"]); ;
+            }
+            return -1;
+        }
+
     }
 }

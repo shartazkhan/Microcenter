@@ -30,14 +30,15 @@ namespace Microcenter.Presentation_Layer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.elipseSalesHistory = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.dragControlSalesHistory = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.dataGridViewSales = new Guna.UI2.WinForms.Guna2DataGridView();
             this.buttonPrint = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonBack = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,30 +66,30 @@ namespace Microcenter.Presentation_Layer
             // 
             this.dataGridViewSales.AllowUserToAddRows = false;
             this.dataGridViewSales.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
-            this.dataGridViewSales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
+            this.dataGridViewSales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSales.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridViewSales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewSales.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSales.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSales.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewSales.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewSales.EnableHeadersVisualStyles = false;
             this.dataGridViewSales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
@@ -129,7 +130,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonPrint.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
             this.buttonPrint.HoverState.Parent = this.buttonPrint;
-            this.buttonPrint.Location = new System.Drawing.Point(958, 523);
+            this.buttonPrint.Location = new System.Drawing.Point(938, 450);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.ShadowDecoration.Parent = this.buttonPrint;
             this.buttonPrint.Size = new System.Drawing.Size(180, 45);
@@ -137,11 +138,28 @@ namespace Microcenter.Presentation_Layer
             this.buttonPrint.Text = "Print";
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
+            // buttonBack
+            // 
+            this.buttonBack.CheckedState.Parent = this.buttonBack;
+            this.buttonBack.CustomImages.Parent = this.buttonBack;
+            this.buttonBack.FillColor = System.Drawing.Color.LightCoral;
+            this.buttonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
+            this.buttonBack.HoverState.Parent = this.buttonBack;
+            this.buttonBack.Location = new System.Drawing.Point(938, 526);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.ShadowDecoration.Parent = this.buttonBack;
+            this.buttonBack.Size = new System.Drawing.Size(180, 45);
+            this.buttonBack.TabIndex = 3;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // SalesHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 605);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.dataGridViewSales);
             this.Controls.Add(this.guna2ControlBox1);
@@ -162,5 +180,6 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2DragControl dragControlSalesHistory;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridViewSales;
         private Guna.UI2.WinForms.Guna2Button buttonPrint;
+        private Guna.UI2.WinForms.Guna2Button buttonBack;
     }
 }

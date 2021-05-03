@@ -16,12 +16,15 @@ namespace Microcenter.Presentation_Layer
 {
     public partial class SalesHistory : Form
     {
-        public SalesHistory()
+        AdminDashboard adminDashboard;
+        public SalesHistory(AdminDashboard adminDashboard)
         {
             InitializeComponent();
 
             SaleService salesService = new SaleService();
             dataGridViewSales.DataSource = salesService.GetAllSales();
+
+            this.adminDashboard = adminDashboard;
         }
 
         private void SalesHistory_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,7 +34,11 @@ namespace Microcenter.Presentation_Layer
 
         private void SalesHistory_Load(object sender, EventArgs e)
         {
-            
+            if (adminDashboard.toggleSwitch1.Checked == true)
+            {
+                this.BackColor = Color.FromArgb(6, 23, 33);
+                dataGridViewSales.BackgroundColor = Color.FromArgb(63, 63, 70);
+            }
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -39,6 +46,12 @@ namespace Microcenter.Presentation_Layer
            // reportViewerNUT reportViewer = new reportViewerNUT(Convert.ToInt32(textBoxID.Text));
             reportViewerSales reportViewerSales = new reportViewerSales();
             reportViewerSales.Show();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            adminDashboard.Show();
         }
     }
 }

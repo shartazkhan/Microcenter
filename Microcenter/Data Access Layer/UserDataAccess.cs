@@ -65,7 +65,7 @@ namespace Microcenter.Data_Access_Layer
                 return this.ExecuteQuery(sql);
             }
 
-            public string GetUsername(string employeeID)
+            public string GetUsername(int employeeID)
             {
                 string sql = "SELECT Name FROM Users WHERE EmployeeID='" + employeeID + "'";
                 SqlDataReader reader = this.GetData(sql);

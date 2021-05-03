@@ -67,5 +67,15 @@ namespace Microcenter.Business_Logic_Layer
             return this.categoryDataAccess.UpdateCategoryCount(categoryName, count);
         }
 
+        public int GetMaxSalesCount()
+        {
+            return categoryDataAccess.GetMaxSalesCount();
+        }
+
+        public string GetBestCategory(int maxSaleCount)
+        {
+            return categoryDataAccess.GetBestCategory(maxSaleCount);
+        }
+
     }
 }

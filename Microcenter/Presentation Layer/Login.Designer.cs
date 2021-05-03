@@ -228,10 +228,10 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button buttonLogin;
         private Guna.UI2.WinForms.Guna2TextBox textBoxPassword;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxEmployeeId;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxEmployeeId;
         private Guna.UI2.WinForms.Guna2ControlBox controlBoxClose;
-        private Guna.UI2.WinForms.Guna2RadioButton radioButtonAdmin;
-        private Guna.UI2.WinForms.Guna2RadioButton radioButtonManager;
-        private Guna.UI2.WinForms.Guna2RadioButton radioButtonCashier;
+        public Guna.UI2.WinForms.Guna2RadioButton radioButtonAdmin;
+        public Guna.UI2.WinForms.Guna2RadioButton radioButtonManager;
+        public Guna.UI2.WinForms.Guna2RadioButton radioButtonCashier;
     }
 }

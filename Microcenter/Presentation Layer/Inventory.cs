@@ -16,11 +16,38 @@ namespace Microcenter.Presentation_Layer
     public partial class Inventory : Form
     {
         private AdminDashboard adminDashboard;
+        private ManagerDashboard managerDashboard;
+        private bool _darkMode;
+        private string _pos; 
         public Inventory(AdminDashboard adminDashboard)
         {
             InitializeComponent();
             this.adminDashboard = adminDashboard;
-            if (adminDashboard.toggleSwitch1.Checked == true)
+            _darkMode = adminDashboard.toggleSwitch1.Checked;
+            _pos = adminDashboard.labelPosition.Text;
+
+        }
+        public Inventory(ManagerDashboard managerDashboard)
+        {
+            InitializeComponent();
+            this.managerDashboard = managerDashboard;
+            _darkMode = managerDashboard.toggleSwitch1.Checked;
+            _pos = managerDashboard.labelPosition.Text;
+        }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            CategoryService categoryService = new CategoryService();
+            comboBoxDeleteCategory.DataSource = categoryService.GetCategoryNames();
+            comboBoxUpdateCategory.DataSource = categoryService.GetCategoryNames();
+
+            ProductService productService = new ProductService();
+            dataGridViewProduct.DataSource = productService.GetAllProducts();
+            comboBoxProductCategory.DataSource = categoryService.GetCategoryNames();
+            buttonUpdateProduct.Enabled = false;
+            buttonDeleteProduct.Enabled = false;
+
+            if (_darkMode == true)
             {
                 //this.BackColor = Color.FromArgb(6, 23, 33);
                 guna2GroupBox1.BackColor = Color.FromArgb(6, 23, 33);
@@ -31,7 +58,7 @@ namespace Microcenter.Presentation_Layer
                 guna2GroupBox1.BorderColor = Color.Black;
                 guna2GroupBox2.BorderColor = Color.Black;
 
-                this.BackColor = Color.FromArgb(42, 42, 44); 
+                this.BackColor = Color.FromArgb(6, 23, 33);
                 labelListingPrice.ForeColor = Color.AliceBlue;
                 labelRetailPrice.ForeColor = Color.AliceBlue;
                 labelStock.ForeColor = Color.AliceBlue;
@@ -53,7 +80,7 @@ namespace Microcenter.Presentation_Layer
                 textBoxAddCategory.FillColor = Color.FromArgb(63, 63, 70);
                 textBoxDeleteCategoryId.FillColor = Color.FromArgb(63, 63, 70);
                 textBoxUpdateCategoryId.FillColor = Color.FromArgb(63, 63, 70);
-                
+
                 comboBoxDeleteCategory.FillColor = Color.FromArgb(63, 63, 70);
                 comboBoxUpdateCategory.FillColor = Color.FromArgb(63, 63, 70);
 
@@ -95,19 +122,6 @@ namespace Microcenter.Presentation_Layer
             }
         }
 
-        private void Inventory_Load(object sender, EventArgs e)
-        {
-            CategoryService categoryService = new CategoryService();
-            comboBoxDeleteCategory.DataSource = categoryService.GetCategoryNames();
-            comboBoxUpdateCategory.DataSource = categoryService.GetCategoryNames();
-
-            ProductService productService = new ProductService();
-            dataGridViewProduct.DataSource = productService.GetAllProducts();
-            comboBoxProductCategory.DataSource = categoryService.GetCategoryNames();
-            buttonUpdateProduct.Enabled = false;
-            buttonDeleteProduct.Enabled = false;
-        }
-
         void UpdateListofCategories()
         {
             CategoryService categoryService = new CategoryService();
@@ -139,7 +153,15 @@ namespace Microcenter.Presentation_Layer
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminDashboard.Show();
+            if (_pos == "Admin")
+            {
+                adminDashboard.Show();
+            }
+            else if (_pos == "Manager")
+            {
+                managerDashboard.Show();
+            }
+           
         }
 
         private void buttonAddCategory_Click(object sender, EventArgs e)

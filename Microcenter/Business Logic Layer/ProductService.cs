@@ -98,10 +98,32 @@ namespace Microcenter.Business_Logic_Layer
         {
             return this.productDataAccess.GetProductCount(producName);
         }
+        public int GetProductUnit(string producName)
+        {
+            return this.productDataAccess.GetProductCount(producName);
+        }
+
         public int UpdateProductCount(string productName, int count)
         {
             return this.productDataAccess.UpdateProductCount(productName,count);
         }
+         public int UpdateProductUnit(string productName, int unit)
+        {
+            return this.productDataAccess.UpdateProductCount(productName,unit);
+        }
 
+         public List<string> GetBestProducts(int maxSaleCount)
+         {
+             return productDataAccess.GetBestProducts(maxSaleCount);
+         }
+         public string GetBestProduct(int maxSaleCount)
+         {
+             return productDataAccess.GetBestProduct(maxSaleCount);
+         }
+
+         public int GetMaxSalesCount()
+         {
+             return productDataAccess.GetMaxSalesCount();
+         }
     }
 }

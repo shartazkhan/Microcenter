@@ -50,9 +50,9 @@ namespace Microcenter.Business_Logic_Layer
         {
             return this.userDataAccess.DeleteUser(employeeId);
         }
-      /*  public List<string> GetUserNames()
+        public string GetUserName(int id)
         {
-            return this.userDataAccess.GetUsernames();
-        }*/
+            return this.userDataAccess.GetUsername(id);
+        }
     }
 }

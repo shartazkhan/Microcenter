@@ -56,5 +56,23 @@ namespace Microcenter.Business_Logic_Layer
             return salesmanDataAccess.GetSalesmanMoney(id);
         }
 
+        public int GetMaxUnit()
+        {
+            return this.salesmanDataAccess.GetMaxUnit();
+        }
+        public int GetMaxMoney()
+        {
+            return this.salesmanDataAccess.GetMaxMoney();
+        }
+
+        public int GetBestSalesmanCat1(decimal money)
+        {
+            return this.salesmanDataAccess.GetBestSalesmanCat1(money);
+        }
+        public int GetBestSalesmanCat2(int unit)
+        {
+            return this.salesmanDataAccess.GetBestSalesmanCat2(unit);
+        }
+
     }
 }

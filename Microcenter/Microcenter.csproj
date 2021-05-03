@@ -225,9 +225,20 @@
   <ItemGroup>
     <None Include="Image\Inventory_Black.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\medal.png" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medal%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medal%284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medal%285%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

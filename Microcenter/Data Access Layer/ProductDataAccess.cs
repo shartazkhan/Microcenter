@@ -87,17 +87,7 @@ namespace Microcenter.Data_Access_Layer
             return products;
         }
 
-        public List<string> GetProductNames()
-        {
-            string sql = "SELECT ProductName FROM Products";
-            SqlDataReader reader = this.GetData(sql);
-            List<string> productNames = new List<string>();
-            while (reader.Read())
-            {
-                productNames.Add(reader["ProductName"].ToString());
-            }
-            return productNames;
-        }
+    
 
         public List<string> GetProductNamesbyCategoryName(string cName)
         {
@@ -146,12 +136,81 @@ namespace Microcenter.Data_Access_Layer
             }
             return -1;
         }
+        public int GetProductUnit(string productName)
+        {
+            string sql = "SELECT Unit FROM Products WHERE ProductName='" + productName + "'";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["Unit"]);
+            }
+            return -1;
+        }
 
         public int UpdateProductCount(string productName, int count)
         {
             string sql = "UPDATE Products SET SaleCount=" + count + " WHERE ProductName = '" + productName +"'";
             return this.ExecuteQuery(sql);
         }
+
+        public int UpdateProductUnit(string productName, int unit)
+        {
+            string sql = "UPDATE Products SET Unit=" + unit + " WHERE ProductName = '" + productName + "'";
+            return this.ExecuteQuery(sql);
+        }
+
+        public int GetMaxSalesCount()
+        {
+            string sql = "SELECT MAX(SaleCount) as SaleCount FROM Products";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["SaleCount"]);
+            }
+            return -1;
+        }
+
+
+        public List<string> GetBestProducts(int maxSaleCount)
+        {
+            string sql = "SELECT ProductName FROM Products WHERE SaleCount="+ maxSaleCount;
+            SqlDataReader reader = this.GetData(sql);
+
+            List<string> productNames = new List<string>();
+            if (reader.Read())
+            {
+                //product.ProductName = reader["ProductName"].ToString();
+                productNames.Add(reader["ProductName"].ToString());
+                return productNames;
+            }
+
+            return null;
+        }
+
+        public string GetBestProduct(int maxSaleCount)
+        {
+            string sql = "SELECT ProductName FROM Products WHERE SaleCount=" + maxSaleCount;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return reader["ProductName"].ToString();
+            }
+            return null;
+        }
+
+        public List<string> GetProductNames()
+        {
+            string sql = "SELECT ProductName FROM Products";
+            SqlDataReader reader = this.GetData(sql);
+            List<string> productNames = new List<string>();
+            while (reader.Read())
+            {
+                productNames.Add(reader["ProductName"].ToString());
+            }
+            return productNames;
+        }
+
+
 
     }
 }

@@ -105,5 +105,27 @@ namespace Microcenter.Data_Access_Layer
             string sql = "UPDATE Categories SET SaleCount=" + count + " WHERE CategoryName = '" + categoryName + "'";
             return this.ExecuteQuery(sql);
         }
+
+        public int GetMaxSalesCount()
+        {
+            string sql = "SELECT MAX(SaleCount) as SaleCount FROM Categories";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["SaleCount"]);
+            }
+            return -1;
+        }
+
+        public string GetBestCategory(int maxSaleCount)
+        {
+            string sql = "SELECT CategoryName FROM Categories WHERE SaleCount=" + maxSaleCount;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return reader["CategoryName"].ToString();
+            }
+            return null;
+        }
     }
 }

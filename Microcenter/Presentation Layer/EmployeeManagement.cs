@@ -78,6 +78,28 @@ namespace Microcenter.Presentation_Layer
 
             dataGridViewEmployee.DataSource = employeeService.GetAllEmployee();
 
+            if (adminDashboard.toggleSwitch1.Checked == true)
+            {
+                this.BackColor = Color.FromArgb(6, 23, 33);
+                dataGridViewEmployee.BackgroundColor = Color.FromArgb(63, 63, 70);
+
+                textBoxName.ForeColor = Color.White;
+                textBoxPassword.ForeColor = Color.White;
+                textBoxContact.ForeColor = Color.White;
+                textBoxPath.ForeColor = Color.White;
+                comboBox2Position.ForeColor = Color.White;
+                comboBoxGender.ForeColor = Color.White;
+
+                radioButtonTempo.ForeColor = Color.White;
+                radioButtonParman.ForeColor = Color.White;
+
+                labelEmployeeID.ForeColor = Color.White;
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                labelDoB.ForeColor = Color.White;
+                labelType.ForeColor = Color.White;
+
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

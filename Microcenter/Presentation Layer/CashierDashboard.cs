@@ -101,6 +101,9 @@ namespace Microcenter.Presentation_Layer
                 int _pSaleCount = productService.GetProductCount(comboBoxProductName.Text) + Convert.ToInt32(textBoxUnit.Text);
                 int result4 = productService.UpdateProductCount(comboBoxProductName.Text, _pSaleCount);
 
+                int _pUnitCount = productService.GetProductUnit(comboBoxProductName.Text) - Convert.ToInt32(textBoxUnit.Text);
+                int result6 = productService.UpdateProductUnit(comboBoxProductName.Text, _pUnitCount);
+
                 CategoryService categoryService = new CategoryService();
                 int _cSaleCount = categoryService.GetCategoryCount(comboBoxCategoryName.Text) + Convert.ToInt32(textBoxUnit.Text);
                 int result5 = categoryService.UpdateCategoryCount(comboBoxCategoryName.Text, _cSaleCount);
@@ -162,6 +165,9 @@ namespace Microcenter.Presentation_Layer
             CategoryService categoryService = new CategoryService();
             int _cSaleCount = categoryService.GetCategoryCount(comboBoxCategoryName.Text) - this._unitR;
             int result5 = categoryService.UpdateCategoryCount(comboBoxCategoryName.Text, _cSaleCount);
+
+            int _pUnitCount = productService.GetProductUnit(comboBoxProductName.Text) - Convert.ToInt32(textBoxUnit.Text);
+            int result6 = productService.UpdateProductUnit(comboBoxProductName.Text, _pUnitCount);
 
             UpdateList();
         }
