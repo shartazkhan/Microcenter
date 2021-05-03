@@ -17,6 +17,7 @@ namespace Microcenter.Data_Access_Layer.Entities
         public string HireDate { get; set; }
         public string Position { get; set; }
         public string Picture { get; set; }
+        public decimal Salary { get; set; }
 
     }
 }

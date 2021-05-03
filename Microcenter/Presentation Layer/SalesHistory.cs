@@ -17,6 +17,8 @@ namespace Microcenter.Presentation_Layer
     public partial class SalesHistory : Form
     {
         AdminDashboard adminDashboard;
+        ManagerDashboard managerDashboard;
+        private string _pos;
         public SalesHistory(AdminDashboard adminDashboard)
         {
             InitializeComponent();
@@ -25,7 +27,31 @@ namespace Microcenter.Presentation_Layer
             dataGridViewSales.DataSource = salesService.GetAllSales();
 
             this.adminDashboard = adminDashboard;
+            _pos = adminDashboard.labelPosition.Text;
+            if (adminDashboard.toggleSwitch1.Checked == true)
+            {
+                this.BackColor = Color.FromArgb(6, 23, 33);
+                dataGridViewSales.BackgroundColor = Color.FromArgb(63, 63, 70);
+            }
         }
+
+        public SalesHistory(ManagerDashboard managerDashboard)
+        {
+            InitializeComponent();
+
+            SaleService salesService = new SaleService();
+            dataGridViewSales.DataSource = salesService.GetAllSales();
+
+            this.managerDashboard = managerDashboard;
+            _pos = managerDashboard.labelPosition.Text;
+            if (managerDashboard.toggleSwitch1.Checked == true)
+            {
+                this.BackColor = Color.FromArgb(6, 23, 33);
+                dataGridViewSales.BackgroundColor = Color.FromArgb(63, 63, 70);
+            }
+        }
+
+
 
         private void SalesHistory_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -34,11 +60,7 @@ namespace Microcenter.Presentation_Layer
 
         private void SalesHistory_Load(object sender, EventArgs e)
         {
-            if (adminDashboard.toggleSwitch1.Checked == true)
-            {
-                this.BackColor = Color.FromArgb(6, 23, 33);
-                dataGridViewSales.BackgroundColor = Color.FromArgb(63, 63, 70);
-            }
+            
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -51,7 +73,14 @@ namespace Microcenter.Presentation_Layer
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminDashboard.Show();
+            if (_pos == "Admin")
+            {
+                adminDashboard.Show();
+            }
+            else if (_pos == "Manager")
+            {
+                managerDashboard.Show();
+            }
         }
     }
 }

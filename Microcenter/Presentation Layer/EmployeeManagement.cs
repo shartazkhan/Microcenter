@@ -17,8 +17,10 @@ namespace Microcenter.Presentation_Layer
     public partial class EmployeeManagement : Form
     {
         AdminDashboard adminDashboard;
+        ManagerDashboard managerDashboard;
         List<string> genderList = new List<string>() { "Gender", "Male", "Female", "Other" };
         List<string> positionList = new List<string>() { "Position", "Manager", "Cashier", "Salesman","Owner" };
+        List<string> positionList2 = new List<string>() { "Position", "Cashier", "Salesman"};
         private string tempFileName;
         private string tempFilePath = @"C:\Users\shart\source\repos\Microcenter\Microcenter\Image\";
         public string Emptype;
@@ -26,14 +28,79 @@ namespace Microcenter.Presentation_Layer
         public string pos;
         private string imageFileName;
         private int result;
+        private string _pos;
         public EmployeeManagement(AdminDashboard adminDashboard)
         {
             InitializeComponent();
             this.adminDashboard = adminDashboard;
+            _pos = adminDashboard.labelPosition.Text;
             comboBoxGender.DataSource = genderList;
             comboBox2Position.DataSource = positionList;
             buttonPRF.Enabled = true;
             textBoxPassword.Enabled = false;
+
+            EmployeeService employeeService = new EmployeeService();
+            dataGridViewEmployee.DataSource = employeeService.GetAllEmployee();
+
+            if (adminDashboard.toggleSwitch1.Checked == true)
+            {
+                this.BackColor = Color.FromArgb(6, 23, 33);
+                dataGridViewEmployee.BackgroundColor = Color.FromArgb(63, 63, 70);
+
+                textBoxName.ForeColor = Color.White;
+                textBoxPassword.ForeColor = Color.White;
+                textBoxContact.ForeColor = Color.White;
+                textBoxPath.ForeColor = Color.White;
+                comboBox2Position.ForeColor = Color.White;
+                comboBoxGender.ForeColor = Color.White;
+
+                radioButtonTempo.ForeColor = Color.White;
+                radioButtonParman.ForeColor = Color.White;
+
+                labelEmployeeID.ForeColor = Color.White;
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                labelDoB.ForeColor = Color.White;
+                labelType.ForeColor = Color.White;
+
+            }
+        }
+
+        public EmployeeManagement(ManagerDashboard managerDashboard)
+        {
+            InitializeComponent();
+            this.managerDashboard = managerDashboard;
+            _pos = managerDashboard.labelPosition.Text;
+            comboBoxGender.DataSource = genderList;
+            comboBox2Position.DataSource = positionList2;
+            buttonPRF.Enabled = true;
+            textBoxPassword.Enabled = false;
+
+            EmployeeService employeeService = new EmployeeService();
+            dataGridViewEmployee.DataSource = employeeService.GetAllEmployee2("Salesman", "Cashier");
+
+            if (managerDashboard.toggleSwitch1.Checked == true)
+            {
+                this.BackColor = Color.FromArgb(6, 23, 33);
+                dataGridViewEmployee.BackgroundColor = Color.FromArgb(63, 63, 70);
+
+                textBoxName.ForeColor = Color.White;
+                textBoxPassword.ForeColor = Color.White;
+                textBoxContact.ForeColor = Color.White;
+                textBoxPath.ForeColor = Color.White;
+                comboBox2Position.ForeColor = Color.White;
+                comboBoxGender.ForeColor = Color.White;
+
+                radioButtonTempo.ForeColor = Color.White;
+                radioButtonParman.ForeColor = Color.White;
+
+                labelEmployeeID.ForeColor = Color.White;
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                labelDoB.ForeColor = Color.White;
+                labelType.ForeColor = Color.White;
+
+            }
         }
 
         void UpdateList()
@@ -74,38 +141,23 @@ namespace Microcenter.Presentation_Layer
         private void Employee_Load(object sender, EventArgs e)
         {
             circlePictureBox.Image = Image.FromFile(@"C:\Users\shart\source\repos\Microcenter\Microcenter\Image\Avatar.png");
-            EmployeeService employeeService = new EmployeeService();
+           
 
-            dataGridViewEmployee.DataSource = employeeService.GetAllEmployee();
-
-            if (adminDashboard.toggleSwitch1.Checked == true)
-            {
-                this.BackColor = Color.FromArgb(6, 23, 33);
-                dataGridViewEmployee.BackgroundColor = Color.FromArgb(63, 63, 70);
-
-                textBoxName.ForeColor = Color.White;
-                textBoxPassword.ForeColor = Color.White;
-                textBoxContact.ForeColor = Color.White;
-                textBoxPath.ForeColor = Color.White;
-                comboBox2Position.ForeColor = Color.White;
-                comboBoxGender.ForeColor = Color.White;
-
-                radioButtonTempo.ForeColor = Color.White;
-                radioButtonParman.ForeColor = Color.White;
-
-                labelEmployeeID.ForeColor = Color.White;
-                label1.ForeColor = Color.White;
-                label2.ForeColor = Color.White;
-                labelDoB.ForeColor = Color.White;
-                labelType.ForeColor = Color.White;
-
-            }
+          
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminDashboard.Show();
+            if (_pos == "Admin")
+            {
+                adminDashboard.Show();
+            }
+            else if (_pos == "Manager")
+            {
+                managerDashboard.Show();
+            }
+
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -126,6 +178,7 @@ namespace Microcenter.Presentation_Layer
 
                 textBoxName.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBoxContact.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBoxSalary.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[9].Value.ToString();
                 dateTimePickerDoB.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
                 dateTimePickerHireDate.Text = dataGridViewEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
 
@@ -203,10 +256,6 @@ namespace Microcenter.Presentation_Layer
             }
             else
             {
-                
-
-               
-
 
                 if (radioButtonParman.Checked == true)
                 {
@@ -232,7 +281,7 @@ namespace Microcenter.Presentation_Layer
 
                 // Add in employee
                 EmployeeService employeeService = new EmployeeService();
-                this.result = employeeService.AddNewEmployee(textBoxName.Text,textBoxContact.Text,comboBoxGender.Text,dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text,comboBox2Position.Text, (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)));
+                this.result = employeeService.AddNewEmployee(textBoxName.Text,textBoxContact.Text,comboBoxGender.Text,dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text,comboBox2Position.Text, (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)),Convert.ToDecimal(textBoxSalary.Text));
                 if (result > 0)
                 {
                     MessageBox.Show("New Employee added successfully !!");
@@ -410,7 +459,7 @@ namespace Microcenter.Presentation_Layer
                
 
                  EmployeeService employeeService = new EmployeeService();
-                 result = employeeService.UpdateExistingEmployee(Convert.ToInt32(labelEmployeeID.Text), textBoxName.Text, textBoxContact.Text, comboBoxGender.Text, dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text, comboBox2Position.Text, imageFileName);
+                 result = employeeService.UpdateExistingEmployee(Convert.ToInt32(labelEmployeeID.Text), textBoxName.Text, textBoxContact.Text, comboBoxGender.Text, dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text, comboBox2Position.Text, imageFileName, Convert.ToDecimal(textBoxSalary.Text));
 
             }
             else
@@ -426,7 +475,7 @@ namespace Microcenter.Presentation_Layer
                 File.Copy(textBoxPath.Text, ln, true);
 
                 EmployeeService employeeService = new EmployeeService();
-                result = employeeService.UpdateExistingEmployee(Convert.ToInt32(labelEmployeeID.Text), textBoxName.Text, textBoxContact.Text, comboBoxGender.Text, dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text, comboBox2Position.Text, (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)));
+                result = employeeService.UpdateExistingEmployee(Convert.ToInt32(labelEmployeeID.Text), textBoxName.Text, textBoxContact.Text, comboBoxGender.Text, dateTimePickerDoB.Text, this.Emptype, dateTimePickerHireDate.Text, comboBox2Position.Text, (textBoxName.Text + "_" + Path.GetFileName(textBoxPath.Text)), Convert.ToDecimal(textBoxSalary.Text));
 
             }
 

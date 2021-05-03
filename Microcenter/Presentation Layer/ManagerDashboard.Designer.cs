@@ -37,6 +37,8 @@ namespace Microcenter.Presentation_Layer
             this.buttonInventory = new Guna.UI2.WinForms.Guna2Button();
             this.buttonEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelPosition = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.labelDM = new System.Windows.Forms.Label();
             this.labelMC = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@ namespace Microcenter.Presentation_Layer
             this.labelBSP2 = new System.Windows.Forms.Label();
             this.labelBSP1 = new System.Windows.Forms.Label();
             this.labelTitle4 = new System.Windows.Forms.Label();
-            this.labelPosition = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
             this.circlePictureBoxDP = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,6 +115,7 @@ namespace Microcenter.Presentation_Layer
             this.Sales.Size = new System.Drawing.Size(244, 45);
             this.Sales.TabIndex = 5;
             this.Sales.Text = "Sales History";
+            this.Sales.Click += new System.EventHandler(this.Sales_Click);
             // 
             // buttonInventory
             // 
@@ -154,6 +155,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonEmployee.Size = new System.Drawing.Size(244, 45);
             this.buttonEmployee.TabIndex = 3;
             this.buttonEmployee.Text = "Manage Employee";
+            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
             // 
             // buttonLogout
             // 
@@ -171,6 +173,30 @@ namespace Microcenter.Presentation_Layer
             this.buttonLogout.TabIndex = 3;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.White;
+            this.labelName.Location = new System.Drawing.Point(12, 90);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(64, 25);
+            this.labelName.TabIndex = 27;
+            this.labelName.Text = "Name";
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelPosition
+            // 
+            this.labelPosition.AutoSize = true;
+            this.labelPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPosition.ForeColor = System.Drawing.Color.White;
+            this.labelPosition.Location = new System.Drawing.Point(13, 114);
+            this.labelPosition.Name = "labelPosition";
+            this.labelPosition.Size = new System.Drawing.Size(65, 21);
+            this.labelPosition.TabIndex = 29;
+            this.labelPosition.Text = "Position";
+            this.labelPosition.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2ControlBox1
             // 
@@ -445,30 +471,6 @@ namespace Microcenter.Presentation_Layer
             this.labelTitle4.Size = new System.Drawing.Size(176, 21);
             this.labelTitle4.TabIndex = 4;
             this.labelTitle4.Text = "Best Seling Category: ";
-            // 
-            // labelPosition
-            // 
-            this.labelPosition.AutoSize = true;
-            this.labelPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPosition.ForeColor = System.Drawing.Color.White;
-            this.labelPosition.Location = new System.Drawing.Point(13, 114);
-            this.labelPosition.Name = "labelPosition";
-            this.labelPosition.Size = new System.Drawing.Size(65, 21);
-            this.labelPosition.TabIndex = 29;
-            this.labelPosition.Text = "Position";
-            this.labelPosition.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(12, 90);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(64, 25);
-            this.labelName.TabIndex = 27;
-            this.labelName.Text = "Name";
-            this.labelName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // circlePictureBoxDP
             // 

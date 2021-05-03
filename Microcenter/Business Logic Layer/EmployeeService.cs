@@ -21,14 +21,19 @@ namespace Microcenter.Business_Logic_Layer
         {
             return this.employeeDataAccess.GetEmployees();
         }
+        public List<Employee> GetAllEmployee2(string emp1 , string emp2)
+        {
+            return this.employeeDataAccess.GetEmployees2(emp1,emp2);
+        }
+
         public Employee GetSeEmployee(int serial)
         {
             return this.employeeDataAccess.GetEmployeeByID(serial);
         }
 
-        public int UpdateExistingEmployee(int employeeId, string name, string contact, string gender, string doB, string employeeType, string hireDate, string Position, string picture)
+        public int UpdateExistingEmployee(int employeeId, string name, string contact, string gender, string doB, string employeeType, string hireDate, string Position, string picture, decimal salary)
         {
-            Employee employee = new Employee() { EmployeeID = employeeId, Name = name, Contact = contact, Gender = gender,DoB = doB, EmployeeType = employeeType, HireDate = hireDate, Position = Position, Picture = picture};
+            Employee employee = new Employee() { EmployeeID = employeeId, Name = name, Contact = contact, Gender = gender,DoB = doB, EmployeeType = employeeType, HireDate = hireDate, Position = Position, Picture = picture, Salary = salary};
             return this.employeeDataAccess.UpdateEmployee(employee);
         }
        /* public List<Employee> GetStory(string usersname)
@@ -45,13 +50,13 @@ namespace Microcenter.Business_Logic_Layer
             return this.employeeDataAccess.DeleteEmployee(employeeID);
         }
 
-        public int AddNewEmployee(string name, string contact, string gender, string doB, String employeeType, string hireDate, string Position, string picture)
+        public int AddNewEmployee(string name, string contact, string gender, string doB, String employeeType, string hireDate, string Position, string picture, decimal salary)
         {
 
             EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
            
             this.employeeDataAccess = new EmployeeDataAccess();
-            Employee employee = new Employee() {Name = name, Contact = contact, Gender = gender, DoB = doB, EmployeeType = employeeType, HireDate = hireDate, Position = Position, Picture = picture };
+            Employee employee = new Employee() {Name = name, Contact = contact, Gender = gender, DoB = doB, EmployeeType = employeeType, HireDate = hireDate, Position = Position, Picture = picture, Salary = salary};
 
             return this.employeeDataAccess.AddEmployee(employee);
         }

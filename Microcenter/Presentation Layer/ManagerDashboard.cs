@@ -153,5 +153,19 @@ namespace Microcenter.Presentation_Layer
                 labelDM.Text = "Dark Mode";
             }
         }
+
+        private void Sales_Click(object sender, EventArgs e)
+        {
+            SalesHistory salesHistory = new SalesHistory(this);
+            this.Hide();
+            salesHistory.Show();
+        }
+
+        private void buttonEmployee_Click(object sender, EventArgs e)
+        {
+            EmployeeManagement employeeManagement = new EmployeeManagement(this);
+            this.Hide();
+            employeeManagement.Show();
+        }
     }
 }

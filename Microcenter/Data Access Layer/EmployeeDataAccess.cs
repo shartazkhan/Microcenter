@@ -27,6 +27,30 @@ namespace Microcenter.Data_Access_Layer
                 employee.HireDate = reader["HireDate"].ToString();
                 employee.Position = reader["Position"].ToString();
                 employee.Picture = reader["Picture"].ToString();
+                employee.Salary = Convert.ToDecimal(reader["Salary"]);
+                employees.Add(employee);
+            }
+            return employees;
+        }
+
+        public List<Employee> GetEmployees2(string emp1, string emp2)
+        {
+            string sql = "SELECT * FROM Employees WHERE Position='"+emp1+ "' OR Position='" + emp2 + "'";
+            SqlDataReader reader = this.GetData(sql);
+            List<Employee> employees = new List<Employee>();
+            while (reader.Read())
+            {
+                Employee employee = new Employee();
+                employee.EmployeeID = Convert.ToInt32(reader["EmployeeID"]);
+                employee.Name = reader["Name"].ToString();
+                employee.Contact = reader["Contact"].ToString();
+                employee.Gender = reader["Gender"].ToString();
+                employee.DoB = reader["DoB"].ToString();
+                employee.EmployeeType = reader["EmployeeType"].ToString();
+                employee.HireDate = reader["HireDate"].ToString();
+                employee.Position = reader["Position"].ToString();
+                employee.Picture = reader["Picture"].ToString();
+                employee.Salary = Convert.ToDecimal(reader["Salary"]);
                 employees.Add(employee);
             }
             return employees;
@@ -47,6 +71,7 @@ namespace Microcenter.Data_Access_Layer
                 employee.EmployeeType = reader["EmployeeType"].ToString();
                 employee.HireDate = reader["HireDate"].ToString();
                 employee.Position = reader["Position"].ToString();
+                employee.Salary = Convert.ToDecimal(reader["Salary"]);
                 return employee;
             }
             return null;
@@ -54,13 +79,13 @@ namespace Microcenter.Data_Access_Layer
 
         public int AddEmployee(Employee employee)
         {
-            string sql = "INSERT INTO Employees(Name,Contact,Gender,DoB,EmployeeType,HireDate,Position,Picture) VALUES('" + employee.Name + "','" + employee.Contact + "','" + employee.Gender + "','" + employee.DoB + "','" + employee.EmployeeType + "','" + employee.HireDate + "','" + employee.Position + "', '" + employee.Picture + "')";
+            string sql = "INSERT INTO Employees(Name,Contact,Gender,DoB,EmployeeType,HireDate,Position,Picture,Salary) VALUES('" + employee.Name + "','" + employee.Contact + "','" + employee.Gender + "','" + employee.DoB + "','" + employee.EmployeeType + "','" + employee.HireDate + "','" + employee.Position + "', '" + employee.Picture + "', "+ employee.Salary+")";
             return this.ExecuteQuery(sql);
         }
 
         public int UpdateEmployee(Employee employee)
         {
-            string sql = "UPDATE Employees SET Name='" + employee.Name + "',Contact='" + employee.Contact + "',Gender='" + employee.Gender + "',DoB='" + employee.DoB + "',EmployeeType='" + employee.EmployeeType + "',HireDate='" + employee.HireDate + "',Position='" + employee.Position + "',Picture='" + employee.Picture + "' WHERE EmployeeID=" + employee.EmployeeID;
+            string sql = "UPDATE Employees SET Name='" + employee.Name + "',Contact='" + employee.Contact + "',Gender='" + employee.Gender + "',DoB='" + employee.DoB + "',EmployeeType='" + employee.EmployeeType + "',HireDate='" + employee.HireDate + "',Position='" + employee.Position + "',Picture='" + employee.Picture + "',Salary=" + employee.Salary + " WHERE EmployeeID=" + employee.EmployeeID;
             return this.ExecuteQuery(sql);
         }
         public int DeleteEmployee(int employeeId)

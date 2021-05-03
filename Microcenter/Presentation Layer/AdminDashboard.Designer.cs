@@ -64,6 +64,7 @@ namespace Microcenter.Presentation_Layer
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelMC = new System.Windows.Forms.Label();
             this.labelDM = new System.Windows.Forms.Label();
+            this.buttonSalary = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circlePictureBoxDP)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,16 +98,17 @@ namespace Microcenter.Presentation_Layer
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panelLeft.Controls.Add(this.buttonSalary);
             this.panelLeft.Controls.Add(this.labelPosition);
             this.panelLeft.Controls.Add(this.labelName);
             this.panelLeft.Controls.Add(this.Sales);
             this.panelLeft.Controls.Add(this.buttonInventory);
             this.panelLeft.Controls.Add(this.buttonEmployee);
             this.panelLeft.Controls.Add(this.buttonLogout);
-            this.panelLeft.Location = new System.Drawing.Point(0, 38);
+            this.panelLeft.Location = new System.Drawing.Point(0, 112);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.ShadowDecoration.Parent = this.panelLeft;
-            this.panelLeft.Size = new System.Drawing.Size(213, 632);
+            this.panelLeft.Size = new System.Drawing.Size(213, 558);
             this.panelLeft.TabIndex = 1;
             // 
             // labelPosition
@@ -114,7 +116,7 @@ namespace Microcenter.Presentation_Layer
             this.labelPosition.AutoSize = true;
             this.labelPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPosition.ForeColor = System.Drawing.Color.White;
-            this.labelPosition.Location = new System.Drawing.Point(13, 95);
+            this.labelPosition.Location = new System.Drawing.Point(51, 52);
             this.labelPosition.Name = "labelPosition";
             this.labelPosition.Size = new System.Drawing.Size(65, 21);
             this.labelPosition.TabIndex = 7;
@@ -126,7 +128,7 @@ namespace Microcenter.Presentation_Layer
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(12, 71);
+            this.labelName.Location = new System.Drawing.Point(50, 28);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(64, 25);
             this.labelName.TabIndex = 6;
@@ -202,7 +204,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonLogout.ForeColor = System.Drawing.Color.White;
             this.buttonLogout.HoverState.FillColor = System.Drawing.Color.LightCoral;
             this.buttonLogout.HoverState.Parent = this.buttonLogout;
-            this.buttonLogout.Location = new System.Drawing.Point(-8, 576);
+            this.buttonLogout.Location = new System.Drawing.Point(-5, 510);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.ShadowDecoration.Parent = this.buttonLogout;
             this.buttonLogout.Size = new System.Drawing.Size(227, 45);
@@ -213,7 +215,7 @@ namespace Microcenter.Presentation_Layer
             // circlePictureBoxDP
             // 
             this.circlePictureBoxDP.BackColor = System.Drawing.Color.Transparent;
-            this.circlePictureBoxDP.Location = new System.Drawing.Point(12, 12);
+            this.circlePictureBoxDP.Location = new System.Drawing.Point(55, 43);
             this.circlePictureBoxDP.Name = "circlePictureBoxDP";
             this.circlePictureBoxDP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.circlePictureBoxDP.ShadowDecoration.Parent = this.circlePictureBoxDP;
@@ -486,6 +488,25 @@ namespace Microcenter.Presentation_Layer
             this.labelDM.TabIndex = 25;
             this.labelDM.Text = "Dark Mode";
             // 
+            // buttonSalary
+            // 
+            this.buttonSalary.BorderColor = System.Drawing.Color.White;
+            this.buttonSalary.BorderThickness = 1;
+            this.buttonSalary.CheckedState.Parent = this.buttonSalary;
+            this.buttonSalary.CustomImages.Parent = this.buttonSalary;
+            this.buttonSalary.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.buttonSalary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonSalary.ForeColor = System.Drawing.Color.White;
+            this.buttonSalary.HoverState.FillColor = System.Drawing.Color.White;
+            this.buttonSalary.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.buttonSalary.HoverState.Parent = this.buttonSalary;
+            this.buttonSalary.Location = new System.Drawing.Point(-14, 310);
+            this.buttonSalary.Name = "buttonSalary";
+            this.buttonSalary.ShadowDecoration.Parent = this.buttonSalary;
+            this.buttonSalary.Size = new System.Drawing.Size(244, 45);
+            this.buttonSalary.TabIndex = 8;
+            this.buttonSalary.Text = "Salary";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,5 +578,6 @@ namespace Microcenter.Presentation_Layer
         private System.Windows.Forms.Label labelMC;
         public System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.Label labelName;
+        private Guna.UI2.WinForms.Guna2Button buttonSalary;
     }
 }

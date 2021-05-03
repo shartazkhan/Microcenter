@@ -46,7 +46,6 @@ namespace Microcenter.Presentation_Layer
             this.radioButtonTempo = new Guna.UI2.WinForms.Guna2RadioButton();
             this.textBoxPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.buttonBrowse = new Guna.UI2.WinForms.Guna2Button();
-            this.circlePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.buttonDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -61,6 +60,8 @@ namespace Microcenter.Presentation_Layer
             this.buttonPRF = new Guna.UI2.WinForms.Guna2Button();
             this.dateTimePickerDoB = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dateTimePickerHireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.textBoxSalary = new Guna.UI2.WinForms.Guna2TextBox();
+            this.circlePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circlePictureBox)).BeginInit();
             this.SuspendLayout();
@@ -94,10 +95,10 @@ namespace Microcenter.Presentation_Layer
             this.buttonBack.ForeColor = System.Drawing.Color.White;
             this.buttonBack.HoverState.FillColor = System.Drawing.Color.LightCoral;
             this.buttonBack.HoverState.Parent = this.buttonBack;
-            this.buttonBack.Location = new System.Drawing.Point(21, 52);
+            this.buttonBack.Location = new System.Drawing.Point(21, 241);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.ShadowDecoration.Parent = this.buttonBack;
-            this.buttonBack.Size = new System.Drawing.Size(122, 36);
+            this.buttonBack.Size = new System.Drawing.Size(162, 36);
             this.buttonBack.TabIndex = 4;
             this.buttonBack.Text = "Back";
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
@@ -133,12 +134,12 @@ namespace Microcenter.Presentation_Layer
             this.dataGridViewEmployee.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewEmployee.EnableHeadersVisualStyles = false;
             this.dataGridViewEmployee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
-            this.dataGridViewEmployee.Location = new System.Drawing.Point(0, 326);
+            this.dataGridViewEmployee.Location = new System.Drawing.Point(0, 302);
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.ReadOnly = true;
             this.dataGridViewEmployee.RowHeadersVisible = false;
             this.dataGridViewEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(1242, 308);
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(1242, 332);
             this.dataGridViewEmployee.TabIndex = 5;
             this.dataGridViewEmployee.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
             this.dataGridViewEmployee.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
@@ -333,18 +334,6 @@ namespace Microcenter.Presentation_Layer
             this.buttonBrowse.Text = "Browse";
             this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
-            // circlePictureBox
-            // 
-            this.circlePictureBox.Location = new System.Drawing.Point(284, 45);
-            this.circlePictureBox.Name = "circlePictureBox";
-            this.circlePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.circlePictureBox.ShadowDecoration.Parent = this.circlePictureBox;
-            this.circlePictureBox.Size = new System.Drawing.Size(176, 177);
-            this.circlePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circlePictureBox.TabIndex = 16;
-            this.circlePictureBox.TabStop = false;
-            this.circlePictureBox.Click += new System.EventHandler(this.circlePictureBox_Click);
-            // 
             // buttonAdd
             // 
             this.buttonAdd.CheckedState.Parent = this.buttonAdd;
@@ -370,7 +359,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.HoverState.Parent = this.buttonUpdate;
-            this.buttonUpdate.Location = new System.Drawing.Point(935, 91);
+            this.buttonUpdate.Location = new System.Drawing.Point(935, 92);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.ShadowDecoration.Parent = this.buttonUpdate;
             this.buttonUpdate.Size = new System.Drawing.Size(176, 36);
@@ -430,7 +419,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonClear.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonClear.ForeColor = System.Drawing.Color.White;
             this.buttonClear.HoverState.Parent = this.buttonClear;
-            this.buttonClear.Location = new System.Drawing.Point(935, 187);
+            this.buttonClear.Location = new System.Drawing.Point(935, 186);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.ShadowDecoration.Parent = this.buttonClear;
             this.buttonClear.Size = new System.Drawing.Size(176, 36);
@@ -465,7 +454,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonCreateAcc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonCreateAcc.ForeColor = System.Drawing.Color.White;
             this.buttonCreateAcc.HoverState.Parent = this.buttonCreateAcc;
-            this.buttonCreateAcc.Location = new System.Drawing.Point(490, 241);
+            this.buttonCreateAcc.Location = new System.Drawing.Point(21, 45);
             this.buttonCreateAcc.Name = "buttonCreateAcc";
             this.buttonCreateAcc.ShadowDecoration.Parent = this.buttonCreateAcc;
             this.buttonCreateAcc.Size = new System.Drawing.Size(162, 36);
@@ -507,10 +496,10 @@ namespace Microcenter.Presentation_Layer
             this.buttonPRF.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonPRF.ForeColor = System.Drawing.Color.White;
             this.buttonPRF.HoverState.Parent = this.buttonPRF;
-            this.buttonPRF.Location = new System.Drawing.Point(675, 241);
+            this.buttonPRF.Location = new System.Drawing.Point(21, 87);
             this.buttonPRF.Name = "buttonPRF";
             this.buttonPRF.ShadowDecoration.Parent = this.buttonPRF;
-            this.buttonPRF.Size = new System.Drawing.Size(122, 36);
+            this.buttonPRF.Size = new System.Drawing.Size(162, 36);
             this.buttonPRF.TabIndex = 33;
             this.buttonPRF.Text = "Print Login Form";
             this.buttonPRF.Click += new System.EventHandler(this.buttonPRF_Click);
@@ -545,12 +534,48 @@ namespace Microcenter.Presentation_Layer
             this.dateTimePickerHireDate.TabIndex = 35;
             this.dateTimePickerHireDate.Value = new System.DateTime(2021, 5, 1, 12, 52, 21, 164);
             // 
+            // textBoxSalary
+            // 
+            this.textBoxSalary.BorderRadius = 6;
+            this.textBoxSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSalary.DefaultText = "";
+            this.textBoxSalary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSalary.DisabledState.Parent = this.textBoxSalary;
+            this.textBoxSalary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSalary.FocusedState.Parent = this.textBoxSalary;
+            this.textBoxSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSalary.HoverState.Parent = this.textBoxSalary;
+            this.textBoxSalary.Location = new System.Drawing.Point(490, 237);
+            this.textBoxSalary.Name = "textBoxSalary";
+            this.textBoxSalary.PasswordChar = '\0';
+            this.textBoxSalary.PlaceholderText = "Salary";
+            this.textBoxSalary.SelectedText = "";
+            this.textBoxSalary.ShadowDecoration.Parent = this.textBoxSalary;
+            this.textBoxSalary.Size = new System.Drawing.Size(195, 38);
+            this.textBoxSalary.TabIndex = 36;
+            // 
+            // circlePictureBox
+            // 
+            this.circlePictureBox.Location = new System.Drawing.Point(284, 45);
+            this.circlePictureBox.Name = "circlePictureBox";
+            this.circlePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circlePictureBox.ShadowDecoration.Parent = this.circlePictureBox;
+            this.circlePictureBox.Size = new System.Drawing.Size(176, 177);
+            this.circlePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circlePictureBox.TabIndex = 16;
+            this.circlePictureBox.TabStop = false;
+            this.circlePictureBox.Click += new System.EventHandler(this.circlePictureBox_Click);
+            // 
             // EmployeeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1242, 634);
+            this.Controls.Add(this.textBoxSalary);
             this.Controls.Add(this.dateTimePickerHireDate);
             this.Controls.Add(this.dateTimePickerDoB);
             this.Controls.Add(this.buttonPRF);
@@ -619,5 +644,6 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2Button buttonPRF;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePickerHireDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePickerDoB;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxSalary;
     }
 }
