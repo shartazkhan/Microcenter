@@ -37,6 +37,7 @@ namespace Microcenter.Presentation_Layer
             this.textBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.buttonLogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,12 +138,23 @@ namespace Microcenter.Presentation_Layer
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(332, 594);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "©shartaz";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(392, 616);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxEmployeeId);
@@ -155,6 +167,7 @@ namespace Microcenter.Presentation_Layer
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,5 +180,6 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2TextBox textBoxPassword;
         public Guna.UI2.WinForms.Guna2TextBox textBoxEmployeeId;
         private Guna.UI2.WinForms.Guna2ControlBox controlBoxClose;
+        private System.Windows.Forms.Label label1;
     }
 }

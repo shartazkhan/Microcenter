@@ -62,6 +62,7 @@ namespace Microcenter.Presentation_Layer
             this.dateTimePickerHireDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.textBoxSalary = new Guna.UI2.WinForms.Guna2TextBox();
             this.circlePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circlePictureBox)).BeginInit();
             this.SuspendLayout();
@@ -569,12 +570,23 @@ namespace Microcenter.Presentation_Layer
             this.circlePictureBox.TabStop = false;
             this.circlePictureBox.Click += new System.EventHandler(this.circlePictureBox_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(1182, 612);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "©shartaz";
+            // 
             // EmployeeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1242, 634);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxSalary);
             this.Controls.Add(this.dateTimePickerHireDate);
             this.Controls.Add(this.dateTimePickerDoB);
@@ -645,5 +657,6 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePickerHireDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePickerDoB;
         public Guna.UI2.WinForms.Guna2TextBox textBoxSalary;
+        private System.Windows.Forms.Label label3;
     }
 }

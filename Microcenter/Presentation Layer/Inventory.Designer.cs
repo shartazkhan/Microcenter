@@ -70,6 +70,8 @@ namespace Microcenter.Presentation_Layer
             this.dataGridViewProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -324,6 +326,7 @@ namespace Microcenter.Presentation_Layer
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.Controls.Add(this.buttonUpdateProduct);
             this.guna2GroupBox2.Controls.Add(this.labelListingPrice);
             this.guna2GroupBox2.Controls.Add(this.labelRetailPrice);
@@ -751,12 +754,33 @@ namespace Microcenter.Presentation_Layer
             this.gunaLabel1.TabIndex = 30;
             this.gunaLabel1.Text = "Inventory";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(166, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 15);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "©shartaz";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(342, 715);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "©shartaz";
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1114, 732);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.buttonBack);
@@ -818,5 +842,7 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2TextBox textBoxDeleteCategoryId;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

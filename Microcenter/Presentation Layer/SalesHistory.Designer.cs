@@ -39,6 +39,7 @@ namespace Microcenter.Presentation_Layer
             this.dataGridViewSales = new Guna.UI2.WinForms.Guna2DataGridView();
             this.buttonPrint = new Guna.UI2.WinForms.Guna2Button();
             this.buttonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +131,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonPrint.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
             this.buttonPrint.HoverState.Parent = this.buttonPrint;
-            this.buttonPrint.Location = new System.Drawing.Point(938, 450);
+            this.buttonPrint.Location = new System.Drawing.Point(950, 229);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.ShadowDecoration.Parent = this.buttonPrint;
             this.buttonPrint.Size = new System.Drawing.Size(180, 45);
@@ -146,7 +147,7 @@ namespace Microcenter.Presentation_Layer
             this.buttonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonBack.ForeColor = System.Drawing.Color.White;
             this.buttonBack.HoverState.Parent = this.buttonBack;
-            this.buttonBack.Location = new System.Drawing.Point(938, 526);
+            this.buttonBack.Location = new System.Drawing.Point(950, 305);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.ShadowDecoration.Parent = this.buttonBack;
             this.buttonBack.Size = new System.Drawing.Size(180, 45);
@@ -154,11 +155,22 @@ namespace Microcenter.Presentation_Layer
             this.buttonBack.Text = "Back";
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(1134, 583);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "©shartaz";
+            // 
             // SalesHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 605);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.dataGridViewSales);
@@ -170,6 +182,7 @@ namespace Microcenter.Presentation_Layer
             this.Load += new System.EventHandler(this.SalesHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,5 +194,6 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2DataGridView dataGridViewSales;
         private Guna.UI2.WinForms.Guna2Button buttonPrint;
         private Guna.UI2.WinForms.Guna2Button buttonBack;
+        private System.Windows.Forms.Label label1;
     }
 }

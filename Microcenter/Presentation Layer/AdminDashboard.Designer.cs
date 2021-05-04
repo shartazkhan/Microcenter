@@ -64,6 +64,7 @@ namespace Microcenter.Presentation_Layer
             this.labelMC = new System.Windows.Forms.Label();
             this.labelDM = new System.Windows.Forms.Label();
             this.circlePictureBoxDP = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -265,7 +266,7 @@ namespace Microcenter.Presentation_Layer
             this.labelTitle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle2.Location = new System.Drawing.Point(178, 240);
             this.labelTitle2.Name = "labelTitle2";
-            this.labelTitle2.Size = new System.Drawing.Size(186, 17);
+            this.labelTitle2.Size = new System.Drawing.Size(233, 21);
             this.labelTitle2.TabIndex = 8;
             this.labelTitle2.Text = "Best Salesman by Category 2:";
             // 
@@ -486,12 +487,23 @@ namespace Microcenter.Presentation_Layer
             this.circlePictureBoxDP.TabStop = false;
             this.circlePictureBoxDP.UseTransparentBackground = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(1261, 647);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "©shartaz";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1321, 669);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.circlePictureBoxDP);
             this.Controls.Add(this.labelDM);
             this.Controls.Add(this.labelMC);
@@ -557,5 +569,6 @@ namespace Microcenter.Presentation_Layer
         private System.Windows.Forms.Label labelMC;
         public System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label1;
     }
 }

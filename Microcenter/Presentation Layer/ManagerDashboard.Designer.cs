@@ -64,6 +64,7 @@ namespace Microcenter.Presentation_Layer
             this.labelBSP1 = new System.Windows.Forms.Label();
             this.labelTitle4 = new System.Windows.Forms.Label();
             this.circlePictureBoxDP = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -485,12 +486,23 @@ namespace Microcenter.Presentation_Layer
             this.circlePictureBoxDP.TabStop = false;
             this.circlePictureBoxDP.UseTransparentBackground = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(1259, 647);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "©shartaz";
+            // 
             // ManagerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1321, 669);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelDM);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.labelMC);
@@ -556,5 +568,6 @@ namespace Microcenter.Presentation_Layer
         private System.Windows.Forms.Label labelTitle4;
         private System.Windows.Forms.Label labelName;
         public System.Windows.Forms.Label labelPosition;
+        private System.Windows.Forms.Label label1;
     }
 }
