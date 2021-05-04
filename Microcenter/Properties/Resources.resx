@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Inventory_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\Inventory_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="medal(4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medal(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inventory_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Inventory_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="medal(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medal(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,10 +133,16 @@
   <data name="Inventory_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\Inventory_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="medal(5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medal(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="medal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medal(5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medal(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="77Q8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\77Q8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PYBr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PYBr.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -63,6 +63,16 @@ namespace Microcenter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _77Q8 {
+            get {
+                object obj = ResourceManager.GetObject("77Q8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Inventory {
             get {
                 object obj = ResourceManager.GetObject("Inventory", resourceCulture);
@@ -126,6 +136,16 @@ namespace Microcenter.Properties {
         internal static System.Drawing.Bitmap medal_5_ {
             get {
                 object obj = ResourceManager.GetObject("medal(5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PYBr {
+            get {
+                object obj = ResourceManager.GetObject("PYBr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
