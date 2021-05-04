@@ -21,8 +21,8 @@ namespace Microcenter.Data_Access_Layer
                 product.ProductID = Convert.ToInt32(reader["ProductID"]);
                 product.ProductName = reader["ProductName"].ToString();
                 product.Stock = Convert.ToInt32(reader["Stock"]);
-                product.RetailPrice = Convert.ToDouble(reader["RetailPrice"]);
-                product.ListingPrice = Convert.ToDouble(reader["ListingPrice"]);
+                product.RetailPrice = Convert.ToDecimal(reader["RetailPrice"]);
+                product.ListingPrice = Convert.ToDecimal(reader["ListingPrice"]);
                 product.Unit = Convert.ToInt32(reader["Unit"]);
                 product.CategoryID = Convert.ToInt32(reader["CategoryID"]);
                 product.SaleCount = Convert.ToInt32(reader["SaleCount"]);
@@ -40,8 +40,8 @@ namespace Microcenter.Data_Access_Layer
                 product.ProductID = Convert.ToInt32(reader["ProductID"]);
                 product.ProductName = reader["ProductName"].ToString();
                 product.Stock = Convert.ToInt32(reader["Stock"]);
-                product.RetailPrice = Convert.ToDouble(reader["RetailPrice"]);
-                product.ListingPrice = Convert.ToDouble(reader["ListingPrice"]);
+                product.RetailPrice = Convert.ToDecimal(reader["RetailPrice"]);
+                product.ListingPrice = Convert.ToDecimal(reader["ListingPrice"]);
                 product.Unit = Convert.ToInt32(reader["Unit"]);
                 product.CategoryID = Convert.ToInt32(reader["CategoryID"]);
                 product.SaleCount = Convert.ToInt32(reader["SaleCount"]);
@@ -58,7 +58,7 @@ namespace Microcenter.Data_Access_Layer
 
         public int UpdateProduct(Product product)
         {
-            string sql = "UPDATE Products SET ProductName='" + product.ProductName + "',Stock=" + product.Stock + ",RetailPrice=" + product.RetailPrice + ",ListingPrice=" + product.ListingPrice + ",Unit=" + product.Unit + ",CategoryId=" + product.CategoryID + ",SaleCount=" + product.SaleCount + " WHERE ProductId=" + product.ProductID;
+            string sql = "UPDATE Products SET ProductName='" + product.ProductName + "',Stock=" + product.Stock + ",RetailPrice=" + product.RetailPrice + ",ListingPrice=" + product.ListingPrice + ",Unit=" + product.Unit + ",CategoryId=" + product.CategoryID + "WHERE ProductId=" + product.ProductID;
             return this.ExecuteQuery(sql);
         }
         public int DeleteProduct(int id)
@@ -77,12 +77,13 @@ namespace Microcenter.Data_Access_Layer
                 product.ProductID = Convert.ToInt32(reader["ProductID"]);
                 product.ProductName = reader["ProductName"].ToString();
                 product.Stock = Convert.ToInt32(reader["Stock"]);
-                product.RetailPrice = Convert.ToDouble(reader["RetailPrice"]);
-                product.ListingPrice = Convert.ToDouble(reader["ListingPrice"]);
+                product.RetailPrice = Convert.ToDecimal(reader["RetailPrice"]);
+                product.ListingPrice = Convert.ToDecimal(reader["ListingPrice"]);
                 product.Unit = Convert.ToInt32(reader["Unit"]);
                 product.CategoryID = Convert.ToInt32(reader["CategoryID"]);
                 product.SaleCount = Convert.ToInt32(reader["SaleCount"]);
                 products.Add(product);
+
             }
             return products;
         }

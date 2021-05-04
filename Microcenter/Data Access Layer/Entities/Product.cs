@@ -11,8 +11,8 @@ namespace Microcenter.Data_Access_Layer.Entities
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int Stock { get; set; }
-        public double RetailPrice { get; set; }
-        public double ListingPrice { get; set; }
+        public decimal RetailPrice { get; set; }
+        public decimal ListingPrice { get; set; }
         public int Unit { get; set; }
         public int CategoryID { get; set; }
         public int SaleCount { get; set; }

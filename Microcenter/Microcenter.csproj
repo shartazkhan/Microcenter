@@ -135,6 +135,12 @@
     <Compile Include="Presentation Layer\SalesHistory.Designer.cs">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintingLayer\rptSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PrintingLayer\PrintToken.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,12 +183,6 @@
     <Compile Include="PrintingLayer\reportViewerNUT.Designer.cs">
       <DependentUpon>reportViewerNUT.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrintingLayer\rptSales.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptSales.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\AdminDashboard.resx">
@@ -209,6 +209,10 @@
     <EmbeddedResource Include="Presentation Layer\SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintingLayer\rptSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSales.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintingLayer\PrintToken.resx">
       <DependentUpon>PrintToken.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,7 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintingLayer\rptInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptInvoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintingLayer\rptNUT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -231,10 +234,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintingLayer\reportViewerNUT.resx">
       <DependentUpon>reportViewerNUT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrintingLayer\rptSales.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptSales.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

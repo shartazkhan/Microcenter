@@ -47,10 +47,7 @@ namespace Microcenter.Presentation_Layer
             {
                 MessageBox.Show("Please Enter a Password.");
             }
-            else if (radioButtonAdmin.Checked == false && radioButtonCashier.Checked == false && radioButtonManager.Checked == false)
-            {
-                MessageBox.Show("Please Select Your Position.");
-            }
+           
             else
             {
                 LoginService loginService = new LoginService();
@@ -64,26 +61,26 @@ namespace Microcenter.Presentation_Layer
                     
                     
 
-                    if (radioButtonAdmin.Checked == true && result == radioButtonAdmin.Text)
+                    if ("Admin" == result)
                     {
-                        this.pos = radioButtonAdmin.Text;
+                        this.pos = result;
                         AdminDashboard adminDashboard = new AdminDashboard(this);
                         this.Hide();
                         adminDashboard.Show();
                         textBoxPassword.Text = String.Empty;
                         
                     }
-                    else if (radioButtonCashier.Checked == true && result == radioButtonCashier.Text)
+                    else if ("Cashier" == result)
                     {
-                        this.pos = radioButtonCashier.Text;
+                        this.pos = result;
                         CashierDashboard cashierDashboard = new CashierDashboard(this);
                         textBoxPassword.Text = String.Empty;
                         this.Hide();
                         cashierDashboard.Show();
                     }
-                    else if (radioButtonManager.Checked == true && result == radioButtonManager.Text)
+                    else if ("Manager" == result)
                     {
-                        this.pos = radioButtonManager.Text;
+                        this.pos = result;
                         ManagerDashboard managerDashboard = new ManagerDashboard(this);
                         this.Hide();
                         managerDashboard.Show();

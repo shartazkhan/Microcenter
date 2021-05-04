@@ -18,7 +18,6 @@ namespace Microcenter.Business_Logic_Layer
 
         public List<Category> GetAllCategories()
         {
-
             return this.categoryDataAccess.GetCategories();
         }
         public Category GetCategory(int id)

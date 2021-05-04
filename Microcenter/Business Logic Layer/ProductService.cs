@@ -26,7 +26,7 @@ namespace Microcenter.Business_Logic_Layer
             return this.productDataAccess.GetProductsByID(id);
         }
 
-        public int AddNewProduct(string productName, int stock, double retailPrice, double listingPrice, int unit, string categoryName, int count)
+        public int AddNewProduct(string productName, int stock, decimal retailPrice, decimal listingPrice, int unit, string categoryName, int count)
         {
             CategoryDataAccess categoryDataAccess = new CategoryDataAccess();
             int categoryId = categoryDataAccess.GetCategoryId(categoryName);
@@ -45,7 +45,7 @@ namespace Microcenter.Business_Logic_Layer
             this.productDataAccess = new ProductDataAccess();
             return this.productDataAccess.AddProduct(product);
         }
-        public int UpdateExistingProduct(int productId, string productName, int stock, double retailPrice, double listingPrice, int unit, string categoryName)
+        public int UpdateExistingProduct(int productId, string productName, int stock, decimal retailPrice, decimal listingPrice, int unit, string categoryName)
         {
             CategoryDataAccess categoryDataAccess = new CategoryDataAccess();
             int categoryId = categoryDataAccess.GetCategoryId(categoryName);
@@ -61,6 +61,7 @@ namespace Microcenter.Business_Logic_Layer
             };
             this.productDataAccess = new ProductDataAccess();
             return this.productDataAccess.UpdateProduct(product);
+
         }
         public int DeleteProduct(int id)
         {

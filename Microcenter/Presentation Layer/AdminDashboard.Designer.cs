@@ -56,22 +56,22 @@ namespace Microcenter.Presentation_Layer
             this.labelName2 = new System.Windows.Forms.Label();
             this.labelSU = new System.Windows.Forms.Label();
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelMC = new System.Windows.Forms.Label();
             this.labelDM = new System.Windows.Forms.Label();
             this.circlePictureBoxDP = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBoxDP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBoxDP)).BeginInit();
             this.SuspendLayout();
             // 
             // ellipseDasboard
@@ -255,9 +255,9 @@ namespace Microcenter.Presentation_Layer
             this.labelTitle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle1.Location = new System.Drawing.Point(178, 58);
             this.labelTitle1.Name = "labelTitle1";
-            this.labelTitle1.Size = new System.Drawing.Size(236, 21);
+            this.labelTitle1.Size = new System.Drawing.Size(233, 21);
             this.labelTitle1.TabIndex = 7;
-            this.labelTitle1.Text = "Best Employee by Category 1:";
+            this.labelTitle1.Text = "Best Salesman by Category 1:";
             // 
             // labelTitle2
             // 
@@ -265,9 +265,9 @@ namespace Microcenter.Presentation_Layer
             this.labelTitle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle2.Location = new System.Drawing.Point(178, 240);
             this.labelTitle2.Name = "labelTitle2";
-            this.labelTitle2.Size = new System.Drawing.Size(236, 21);
+            this.labelTitle2.Size = new System.Drawing.Size(186, 17);
             this.labelTitle2.TabIndex = 8;
-            this.labelTitle2.Text = "Best Employee by Category 2:";
+            this.labelTitle2.Text = "Best Salesman by Category 2:";
             // 
             // labelBestEmp2
             // 
@@ -375,12 +375,12 @@ namespace Microcenter.Presentation_Layer
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderColor = System.Drawing.Color.Black;
             this.panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.panel2.Controls.Add(this.labelTitle1);
             this.panel2.Controls.Add(this.labelTitle2);
             this.panel2.Controls.Add(this.guna2PictureBox2);
             this.panel2.Controls.Add(this.labelBestEmp2);
             this.panel2.Controls.Add(this.guna2PictureBox1);
             this.panel2.Controls.Add(this.labelUnit);
-            this.panel2.Controls.Add(this.labelTitle1);
             this.panel2.Controls.Add(this.labelName2);
             this.panel2.Controls.Add(this.labelSA);
             this.panel2.Controls.Add(this.labelName1);
@@ -392,6 +392,28 @@ namespace Microcenter.Presentation_Layer
             this.panel2.ShadowDecoration.Parent = this.panel2;
             this.panel2.Size = new System.Drawing.Size(548, 384);
             this.panel2.TabIndex = 22;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::Microcenter.Properties.Resources.medal_2_;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(17, 206);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(153, 151);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 20;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::Microcenter.Properties.Resources.medal;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(19, 20);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(153, 151);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 19;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -408,6 +430,28 @@ namespace Microcenter.Presentation_Layer
             this.panel1.ShadowDecoration.Parent = this.panel1;
             this.panel1.Size = new System.Drawing.Size(520, 384);
             this.panel1.TabIndex = 23;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.Image = global::Microcenter.Properties.Resources.medal_5_;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(286, 72);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.ShadowDecoration.Parent = this.guna2PictureBox4;
+            this.guna2PictureBox4.Size = new System.Drawing.Size(153, 151);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 25;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = global::Microcenter.Properties.Resources.medal_4_;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(32, 72);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
+            this.guna2PictureBox3.Size = new System.Drawing.Size(153, 151);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 24;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // labelMC
             // 
@@ -442,50 +486,6 @@ namespace Microcenter.Presentation_Layer
             this.circlePictureBoxDP.TabStop = false;
             this.circlePictureBoxDP.UseTransparentBackground = true;
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::Microcenter.Properties.Resources.medal_2_;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(17, 206);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(153, 151);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 20;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::Microcenter.Properties.Resources.medal;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(19, 20);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(153, 151);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 19;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.Image = global::Microcenter.Properties.Resources.medal_5_;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(286, 72);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.ShadowDecoration.Parent = this.guna2PictureBox4;
-            this.guna2PictureBox4.Size = new System.Drawing.Size(153, 151);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 25;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = global::Microcenter.Properties.Resources.medal_4_;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(32, 72);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(153, 151);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 24;
-            this.guna2PictureBox3.TabStop = false;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -509,13 +509,13 @@ namespace Microcenter.Presentation_Layer
             this.panelLeft.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBoxDP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBoxDP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

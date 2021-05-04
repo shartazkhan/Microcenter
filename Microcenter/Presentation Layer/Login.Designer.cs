@@ -36,9 +36,6 @@ namespace Microcenter.Presentation_Layer
             this.textBoxEmployeeId = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.buttonLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.radioButtonCashier = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.radioButtonManager = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.radioButtonAdmin = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +51,10 @@ namespace Microcenter.Presentation_Layer
             // controlBoxClose
             // 
             this.controlBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlBoxClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.controlBoxClose.BackColor = System.Drawing.Color.Red;
+            this.controlBoxClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.controlBoxClose.HoverState.Parent = this.controlBoxClose;
-            this.controlBoxClose.IconColor = System.Drawing.Color.White;
+            this.controlBoxClose.IconColor = System.Drawing.Color.Red;
             this.controlBoxClose.Location = new System.Drawing.Point(335, 12);
             this.controlBoxClose.Name = "controlBoxClose";
             this.controlBoxClose.ShadowDecoration.Parent = this.controlBoxClose;
@@ -77,7 +75,7 @@ namespace Microcenter.Presentation_Layer
             this.textBoxEmployeeId.FocusedState.Parent = this.textBoxEmployeeId;
             this.textBoxEmployeeId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxEmployeeId.HoverState.Parent = this.textBoxEmployeeId;
-            this.textBoxEmployeeId.Location = new System.Drawing.Point(92, 376);
+            this.textBoxEmployeeId.Location = new System.Drawing.Point(95, 401);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.PasswordChar = '\0';
             this.textBoxEmployeeId.PlaceholderText = "Employee ID";
@@ -101,7 +99,7 @@ namespace Microcenter.Presentation_Layer
             this.textBoxPassword.FocusedState.Parent = this.textBoxPassword;
             this.textBoxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxPassword.HoverState.Parent = this.textBoxPassword;
-            this.textBoxPassword.Location = new System.Drawing.Point(92, 418);
+            this.textBoxPassword.Location = new System.Drawing.Point(95, 443);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '\0';
             this.textBoxPassword.PlaceholderText = "Password";
@@ -127,66 +125,6 @@ namespace Microcenter.Presentation_Layer
             this.buttonLogin.Text = "Login";
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // radioButtonCashier
-            // 
-            this.radioButtonCashier.AutoSize = true;
-            this.radioButtonCashier.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioButtonCashier.CheckedState.BorderThickness = 0;
-            this.radioButtonCashier.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioButtonCashier.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioButtonCashier.CheckedState.InnerOffset = -4;
-            this.radioButtonCashier.Location = new System.Drawing.Point(155, 474);
-            this.radioButtonCashier.Name = "radioButtonCashier";
-            this.radioButtonCashier.Size = new System.Drawing.Size(60, 17);
-            this.radioButtonCashier.TabIndex = 6;
-            this.radioButtonCashier.TabStop = true;
-            this.radioButtonCashier.Text = "Cashier";
-            this.radioButtonCashier.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radioButtonCashier.UncheckedState.BorderThickness = 2;
-            this.radioButtonCashier.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radioButtonCashier.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radioButtonCashier.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonManager
-            // 
-            this.radioButtonManager.AutoSize = true;
-            this.radioButtonManager.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioButtonManager.CheckedState.BorderThickness = 0;
-            this.radioButtonManager.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioButtonManager.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioButtonManager.CheckedState.InnerOffset = -4;
-            this.radioButtonManager.Location = new System.Drawing.Point(224, 474);
-            this.radioButtonManager.Name = "radioButtonManager";
-            this.radioButtonManager.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonManager.TabIndex = 7;
-            this.radioButtonManager.TabStop = true;
-            this.radioButtonManager.Text = "Manager";
-            this.radioButtonManager.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radioButtonManager.UncheckedState.BorderThickness = 2;
-            this.radioButtonManager.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radioButtonManager.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radioButtonManager.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAdmin
-            // 
-            this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioButtonAdmin.CheckedState.BorderThickness = 0;
-            this.radioButtonAdmin.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radioButtonAdmin.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioButtonAdmin.CheckedState.InnerOffset = -4;
-            this.radioButtonAdmin.Location = new System.Drawing.Point(92, 474);
-            this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(54, 17);
-            this.radioButtonAdmin.TabIndex = 8;
-            this.radioButtonAdmin.TabStop = true;
-            this.radioButtonAdmin.Text = "Admin";
-            this.radioButtonAdmin.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radioButtonAdmin.UncheckedState.BorderThickness = 2;
-            this.radioButtonAdmin.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radioButtonAdmin.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radioButtonAdmin.UseVisualStyleBackColor = true;
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -205,9 +143,6 @@ namespace Microcenter.Presentation_Layer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(392, 616);
-            this.Controls.Add(this.radioButtonAdmin);
-            this.Controls.Add(this.radioButtonManager);
-            this.Controls.Add(this.radioButtonCashier);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxEmployeeId);
@@ -220,7 +155,6 @@ namespace Microcenter.Presentation_Layer
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -233,8 +167,5 @@ namespace Microcenter.Presentation_Layer
         private Guna.UI2.WinForms.Guna2TextBox textBoxPassword;
         public Guna.UI2.WinForms.Guna2TextBox textBoxEmployeeId;
         private Guna.UI2.WinForms.Guna2ControlBox controlBoxClose;
-        public Guna.UI2.WinForms.Guna2RadioButton radioButtonAdmin;
-        public Guna.UI2.WinForms.Guna2RadioButton radioButtonManager;
-        public Guna.UI2.WinForms.Guna2RadioButton radioButtonCashier;
     }
 }

@@ -18,7 +18,15 @@ namespace Microcenter.Presentation_Layer
         private AdminDashboard adminDashboard;
         private ManagerDashboard managerDashboard;
         private bool _darkMode;
-        private string _pos; 
+        private string _pos;
+        private string pName;
+        private string pCategory;
+        private int pUnit;
+        private decimal pLPrice;
+        private decimal pRPrice;
+        private int pStock;
+        private int pID;
+
         public Inventory(AdminDashboard adminDashboard)
         {
             InitializeComponent();
@@ -246,20 +254,27 @@ namespace Microcenter.Presentation_Layer
             try
             {
                 textBoxProductID.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //this.pID = Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value);
                 textBoxProductName.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+               // this.pName = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
                 // textboxP.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
                 textBoxProductRetail.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+               // this.pRPrice = Convert.ToDecimal(dataGridViewProduct.Rows[e.RowIndex].Cells[3].Value);
                 textBoxProductListing.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+              //  this.pLPrice = Convert.ToDecimal(dataGridViewProduct.Rows[e.RowIndex].Cells[4].Value);
                 textBoxProductUnit.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+               // this.pUnit = Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[5].Value);
                 //textBoxProduct.Text = dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
 
                 if (Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[2].Value) == 1)
                 {
                     radioButtonYes.Checked = true;
+                    this.pStock = 1;
                 }
                 else
                 {
                     radioButtonNo.Checked = true;
+                    this.pStock = 0;
                 }
 
                 CategoryService categoryService = new CategoryService();
@@ -268,6 +283,7 @@ namespace Microcenter.Presentation_Layer
                 int catIndex = Convert.ToInt32(dataGridViewProduct.Rows[e.RowIndex].Cells[6].Value);
                 comboBoxProductCategory.SelectedIndex =
                     comboBoxProductCategory.FindStringExact(categoryService.GetCategoryName(catIndex).ToString());
+                pCategory = categoryService.GetCategoryName(catIndex).ToString();
             }
             catch (Exception exception)
             {
@@ -334,7 +350,7 @@ namespace Microcenter.Presentation_Layer
                     }
                     
                     ProductService productService = new ProductService();
-                    int result = productService.AddNewProduct(textBoxProductName.Text, stock, Convert.ToDouble(textBoxProductRetail.Text), Convert.ToDouble(textBoxProductListing.Text), Convert.ToInt32(textBoxProductUnit.Text), comboBoxProductCategory.Text,0);
+                    int result = productService.AddNewProduct(textBoxProductName.Text, stock, Convert.ToDecimal(textBoxProductRetail.Text), Convert.ToDecimal(textBoxProductListing.Text), Convert.ToInt32(textBoxProductUnit.Text), comboBoxProductCategory.Text,0);
                     if (result > 0)
                     {
                         MessageBox.Show("New product added successfully !!");
@@ -350,6 +366,8 @@ namespace Microcenter.Presentation_Layer
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+
+
             ProductService productService = new ProductService();
             int result = productService.DeleteProduct(Convert.ToInt32(textBoxProductID.Text));
             if (result > 0)
@@ -376,12 +394,67 @@ namespace Microcenter.Presentation_Layer
 
         private void buttonUpdateProduct_Click(object sender, EventArgs e)
         {
+           
 
+            if (string.IsNullOrEmpty(textBoxProductName.Text))
+            {
+                MessageBox.Show("Please Enter a Product Name");
+            }
+            else if (radioButtonYes.Checked == false && radioButtonNo.Checked == false)
+            {
+                MessageBox.Show("Please select Stock Status");
+
+            }
+            else if (string.IsNullOrEmpty(textBoxProductUnit.Text))
+            {
+                MessageBox.Show("Please Enter Available Unit");
+
+            }
+            else if (string.IsNullOrEmpty(textBoxProductRetail.Text))
+            {
+                MessageBox.Show("Please Enter The Retail Price");
+            }
+            else if (string.IsNullOrEmpty(textBoxProductListing.Text))
+            {
+                MessageBox.Show("Please Enter the Listing Price");
+            }
+            else
+            {
+               
+                if (radioButtonYes.Checked == true)
+                {
+                    pStock = 1;
+                }
+                else
+                {
+                    pStock = 0;
+                }
+
+                pID = Convert.ToInt32(textBoxProductID.Text);
+                pName = textBoxProductName.Text;
+                pRPrice = Convert.ToDecimal(textBoxProductRetail.Text);
+                pLPrice = Convert.ToDecimal(textBoxProductListing.Text);
+                pUnit = Convert.ToInt32(textBoxProductUnit.Text);
+                pCategory = comboBoxProductCategory.Text;
+
+
+                ProductService productService = new ProductService();
+                int result = productService.UpdateExistingProduct(pID, pName, pStock, pRPrice, pLPrice, pUnit, pCategory);
+                if (result > 0)
+                {
+                    MessageBox.Show("Updated successfully !!");
+                    UpdateListOfProducts();
+                }
+                else
+                {
+                    MessageBox.Show("Error in adding.");
+                }
+            }
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

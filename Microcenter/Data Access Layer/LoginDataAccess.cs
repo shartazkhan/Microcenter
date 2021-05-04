@@ -12,7 +12,7 @@ namespace Microcenter.Data_Access_Layer
     {
         public string UserLoginValidation(User user)
         {
-            string sql = "SELECT * FROM Users WHERE EmployeeID='" + user.EmployeeID + "' AND Password='" + user.Password + "'";
+            string sql = "SELECT Position FROM Users WHERE EmployeeID='" + user.EmployeeID + "' AND Password='" + user.Password + "'";
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
